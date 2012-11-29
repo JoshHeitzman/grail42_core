@@ -37,8 +37,8 @@ echo   * The adb server should be running and connected to a single emulator or
 echo     device prior to execution.
 echo   * The android_sdk_root environment variable must be set the root to the
 echo     Android SDK.
-echo   * The grail42_core_cmd environment variable echo is required to be set
-echo     by running set_env_core.cmd.
+echo   * The grail42_core_cmd environment variable is required to be set by
+echo     running set_env_core.cmd.
 echo.
 echo If the grail42_cmd_verbose_logging environment variable is set then 
 echo additional diagnostic output will be emitted.
