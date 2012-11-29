@@ -20,6 +20,7 @@ call "%grail42_core_cmd%\ensure_argument_not_usage_request.cmd" %1
 if ERRORLEVEL 1 goto Usage
 
 if not "%1"=="" if not exist "%1" (echo The specified directory does not exist at "%1") & goto Usage
+if not "%1"=="" if not exist "%1\index.html" (echo The file index.html is required to at "%1\index.html") & goto Usage
 
 goto ArgsValidated
 
@@ -71,7 +72,7 @@ if exist %NACL_EXE_STDERR% del %NACL_EXE_STDERR%
 if exist %NACLLOG% del %NACLLOG%
 
 rem Start Chrome and after it exits dump the stdout then stderr.
-start /wait C:\Users\Josh\AppData\Local\Google\Chrome\Application\chrome.exe --no-sandbox --user-data-dir="./chrome_data" --enable-nacl http://localhost:5103/
+start /wait %CHROME_PATH% --no-sandbox --user-data-dir="./chrome_data" --enable-nacl http://localhost:5103/
 if exist %NACL_EXE_STDOUT% type %NACL_EXE_STDOUT%
 set NACL_EXE_STDOUT_SIZE=0
 set NACL_EXE_STDERR_SIZE=0
