@@ -1,4 +1,13 @@
-TODO: add project description and usage notes.
+Grail42 Core is a subproject of the Grail42 project located at:
+
+https://github.com/JoshHeitzman/grail42
+
+At present the project just provides a few tools that simplify faux console
+applications on Android and Google Native Client.  The example Visual Studio 
+2010 project that these tools have been tested with is located in the sibling
+project Grail42 Templates (see the Grail42 project referenced above).
+
+--------------------------------------------------------------------------------
 
 This work is distributed under the Boost Software License, Version 1.0 and the
 adjacent file named LICENSE_1_0.txt provides the full text of license.
