@@ -2,10 +2,16 @@ Grail42 Core is a subproject of the Grail42 project located at:
 
 https://github.com/JoshHeitzman/grail42
 
-At present the project just provides a few tools that simplify faux console
-applications on Android and Google Native Client.  The example Visual Studio 
-2010 project that these tools have been tested with is located in the sibling
-project Grail42 Templates (see the Grail42 project referenced above).
+This project provides a few tools that simplify faux console applications on 
+Android and Google Native Client.  The example Visual Studio 2010 project that 
+these tools have been tested with is located in the sibling project Grail42 
+Templates (see the Grail42 project referenced above).
+
+Also provides a Python implementation of a partial prototype for querying
+annotations about any file, directory, items in a directory, or directory tree 
+with the annotations stored in plain text config files (probably XML and JSON 
+as well later) at one or more of a number of well known locations relative to 
+the target.
 
 --------------------------------------------------------------------------------
 
