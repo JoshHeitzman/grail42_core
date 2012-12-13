@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="C/C++ Source Files">
+      <UniqueIdentifier>{5A906E08-742D-4BB9-B561-64AB478370CA}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx</Extensions>
+    </Filter>
+    <Filter Include="C/C++ Header Files">
+      <UniqueIdentifier>{79E750BE-7DFF-4CF7-B906-0C04440BDC3E}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Android Package Files">
+      <UniqueIdentifier>{FD8246EC-5C5F-4320-950F-83471F2E3024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files">
+      <UniqueIdentifier>{92A99EFE-6B47-4289-9740-61822EDBA3E9}</UniqueIdentifier>
+      <Extensions>java;class</Extensions>
+    </Filter>
+    <Filter Include="C/C++ Header Files\g42core">
+      <UniqueIdentifier>{199c081a-2d2a-4f2b-a725-18e6bb30235f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C/C++ Header Files\g42core\metacode">
+      <UniqueIdentifier>{110fedc7-4302-44d9-bb5d-332c6fa81654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C/C++ Header Files\g42core\metacode\detail">
+      <UniqueIdentifier>{a443314c-5895-448f-aa24-0b5ac823cc41}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="android_package\AndroidManifest.xml">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="android_package\src\grail42\core\bootstrap010\FauxConsole.java">
+      <Filter>Java Source Files</Filter>
+    </None>
+    <None Include="android_package\build.xml">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="android_package\res\values\strings.xml">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="android_package\project.properties">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\sparse_vector_with_list.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\detail_sparse_vector_with_list.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode\detail</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bootstrap010.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sparse_vector_with_list_basictests.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sparse_vector_with_list_basictests2.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sparse_vector_with_list_basictests1.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

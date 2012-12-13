@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{BB92606B-53C0-44BA-B91E-57F4E7640C5B}") = "bootstrap010", "bootstrap010.vcxproj", "{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Android = Debug|Android
+		Debug|NaCl32 = Debug|NaCl32
+		Debug|NaCl64 = Debug|NaCl64
+		Debug|PPAPI = Debug|PPAPI
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Android = Release|Android
+		Release|NaCl32 = Release|NaCl32
+		Release|NaCl64 = Release|NaCl64
+		Release|PPAPI = Release|PPAPI
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|Android.ActiveCfg = Debug|Android
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|Android.Build.0 = Debug|Android
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|NaCl32.ActiveCfg = Debug|NaCl32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|NaCl32.Build.0 = Debug|NaCl32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|NaCl64.ActiveCfg = Debug|NaCl64
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|NaCl64.Build.0 = Debug|NaCl64
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|PPAPI.ActiveCfg = Debug|PPAPI
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|PPAPI.Build.0 = Debug|PPAPI
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|Win32.Build.0 = Debug|Win32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|x64.ActiveCfg = Debug|x64
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Debug|x64.Build.0 = Debug|x64
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|Android.ActiveCfg = Release|Android
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|Android.Build.0 = Release|Android
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|NaCl32.ActiveCfg = Release|NaCl32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|NaCl32.Build.0 = Release|NaCl32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|NaCl64.ActiveCfg = Release|NaCl64
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|NaCl64.Build.0 = Release|NaCl64
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|PPAPI.ActiveCfg = Release|PPAPI
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|PPAPI.Build.0 = Release|PPAPI
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|Win32.ActiveCfg = Release|Win32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|Win32.Build.0 = Release|Win32
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|x64.ActiveCfg = Release|x64
+		{ECD4093E-E572-4E1E-AD8E-730041F9D0E7}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+
