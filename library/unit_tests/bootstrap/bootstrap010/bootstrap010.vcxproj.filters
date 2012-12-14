@@ -25,6 +25,12 @@
     <Filter Include="C/C++ Header Files\g42core\metacode\detail">
       <UniqueIdentifier>{a443314c-5895-448f-aa24-0b5ac823cc41}</UniqueIdentifier>
     </Filter>
+    <Filter Include="C/C++ Header Files\g42core\test">
+      <UniqueIdentifier>{c2c079d1-5cbc-4185-b4c8-5e7dc8516e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="C/C++ Header Files\g42core\test\detail">
+      <UniqueIdentifier>{62567418-90b6-42ea-aaa3-353f5381ef54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="android_package\AndroidManifest.xml">
@@ -54,6 +60,21 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\detail_sparse_vector_with_list.hpp">
       <Filter>C/C++ Header Files\g42core\metacode\detail</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\detail_tut_adapter.hpp">
+      <Filter>C/C++ Header Files\g42core\test\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\tut_callback_to_reporter_adapter.hpp">
+      <Filter>C/C++ Header Files\g42core\test\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\namespace.hpp">
+      <Filter>C/C++ Header Files\g42core\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\tut_adapter.hpp">
+      <Filter>C/C++ Header Files\g42core\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespace.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap010.cpp">
@@ -69,6 +90,9 @@
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sparse_vector_with_list_basictests1.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basictests_tut_callback_to_reporter_adapter.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
   </ItemGroup>

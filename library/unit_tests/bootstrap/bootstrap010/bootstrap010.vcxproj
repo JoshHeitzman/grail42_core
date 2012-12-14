@@ -178,6 +178,8 @@
       <PreprocessorDefinitions>HWC_PLATFORM_ANDROID;$(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\..\cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <GccExceptionHandling>true</GccExceptionHandling>
     </ClCompile>
     <Link />
   </ItemDefinitionGroup>
@@ -252,6 +254,8 @@
       <PreprocessorDefinitions>HWC_PLATFORM_ANDROID;$(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\..\..\cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <GccExceptionHandling>true</GccExceptionHandling>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|NaCl32'">
@@ -334,7 +338,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\detail_sparse_vector_with_list.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespace.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\sparse_vector_with_list.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\detail_tut_adapter.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\tut_callback_to_reporter_adapter.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\namespace.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\tut_adapter.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -361,6 +370,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="basictests_tut_callback_to_reporter_adapter.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

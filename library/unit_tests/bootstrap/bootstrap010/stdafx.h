@@ -45,7 +45,11 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #endif // HWC_PLATFORM_*
 
+#include <typeinfo>
 #include <type_traits>
+#include <iostream>
+#include <map>
+#include <utility>
 
 #include <boost/static_assert.hpp>
 
@@ -55,5 +59,11 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include <boost/mpl/eval_if.hpp>
 #include <boost/mpl/greater_equal.hpp>
 #include <boost/mpl/assert.hpp>
+
+#include <tut/tut_runner.hpp>
+#include <tut/tut.hpp>
+
+#include <turtle/function.hpp>
+#include <turtle/mock.hpp>
 
 #endif // HG_6ED6281E3B354BAE95FD2C7E72CAF8D7

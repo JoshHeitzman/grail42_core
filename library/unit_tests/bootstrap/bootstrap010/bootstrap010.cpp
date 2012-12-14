@@ -8,10 +8,17 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
+#include <tut/tut_reporter.hpp>
+
 int faux_main()
 {
-    printf("Hello world.\n");
-    return 0;
+	tut::test_runner_singleton tut_runner;
+	(tut_runner);
+	tut::reporter reporter;
+	tut_runner.get().set_callback(&reporter);
+	tut_runner.get().run_tests();
+	int tut_ret = reporter.all_ok() ? 0 : 1;
+    return tut_ret;
 }
 
 // 1 means that the nexe will be run from the commandline in sel_ldr (e.g. using %grail42_core_cmd%\nacl\faux_console\run_nexe_standalone.cmd)
