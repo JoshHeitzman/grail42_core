@@ -75,6 +75,21 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespace.hpp">
       <Filter>C/C++ Header Files\g42core\metacode</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\reporter_outstream.hpp">
+      <Filter>C/C++ Header Files\g42core\test\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespaces.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\classes.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\namespace.hpp">
+      <Filter>C/C++ Header Files\g42core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\type_constraints.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap010.cpp">
@@ -93,6 +108,9 @@
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
     <ClCompile Include="basictests_tut_callback_to_reporter_adapter.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basictests_reporter_outstream.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
   </ItemGroup>

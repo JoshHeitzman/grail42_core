@@ -339,14 +339,20 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\detail_sparse_vector_with_list.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespace.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespaces.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\sparse_vector_with_list.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\classes.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\type_constraints.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\namespace.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\detail_tut_adapter.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\reporter_outstream.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\tut_callback_to_reporter_adapter.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\namespace.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\tut_adapter.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="basictests_reporter_outstream.cpp" />
     <ClCompile Include="bootstrap010.cpp" />
     <ClCompile Include="sparse_vector_with_list_basictests.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">true</ExcludedFromBuild>
