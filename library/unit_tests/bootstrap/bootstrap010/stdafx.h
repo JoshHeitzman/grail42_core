@@ -66,4 +66,6 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include <turtle/function.hpp>
 #include <turtle/mock.hpp>
 
+#include "g42core/metacode/type_constraints.hpp"
+
 #endif // HG_6ED6281E3B354BAE95FD2C7E72CAF8D7

@@ -8,6 +8,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
+#include "g42core/metacode/classes.hpp"
 #include "g42core/test/namespace.hpp"
 #include "g42core/test/detail/tut_callback_to_reporter_adapter.hpp"
 
@@ -40,6 +41,7 @@ namespace tut
     {
         typedef mock_reporter<std::string> mock_reporter_std_string;
         typedef G42CORE_TEST_NS detail::tut_callback_to_reporter_adapter<mock_reporter_std_string> adapter_with_mock;
+        typedef G42CORE_METACODE_NS ensure_not_copyable<adapter_with_mock> ensure_not_copyable;
 
         // ensure default construction and destruction without overt errors
         {
