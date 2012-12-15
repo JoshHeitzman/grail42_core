@@ -153,7 +153,7 @@ namespace tut
         adapter.test_completed(result3);
         adapter.run_completed();
         ensure(mock::verify());
-        ensure(adapter.all_ok());
+        ensure(!adapter.all_ok());
         }
     }
 }
