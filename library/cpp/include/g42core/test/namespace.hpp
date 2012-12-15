@@ -6,15 +6,19 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 * http://directory.fsf.org/wiki/License:Boost1.0
 * http://en.wikipedia.org/wiki/Boost_Software_License                */
 
-#ifndef MACRO_PREFIX_HG_A276488FB6B8426896EB6C3CCB2150EA
-#define MACRO_PREFIX_HG_A276488FB6B8426896EB6C3CCB2150EA
+#ifndef G42CORE_HG_A276488FB6B8426896EB6C3CCB2150EA
+#define G42CORE_HG_A276488FB6B8426896EB6C3CCB2150EA
 #pragma warning(push)
 #pragma warning(disable : 4068)
 #pragma once
 #pragma warning(pop)
 
+#ifndef G42CORE_HG_DA28A37B28C9478581C4EF3ED6FB6402
 #include "../metacode/namespaces.hpp"
+#endif
+#ifndef G42CORE_HG_CCE88B0DB5234238A7166647329CDA70
 #include "../namespace.hpp"
+#endif
 
 #ifndef G42CORE_TEST_NAMESPACE
 #define G42CORE_TEST_NAMESPACE test
@@ -32,4 +36,4 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #define G42CORE_TEST_NS G42CORE_NAMESPACE3(G42CORE_ROOT_NAMESPACE, G42CORE_CORE_NAMESPACE, G42CORE_TEST_NAMESPACE)::
 #endif
 
-#endif // MACRO_PREFIX_HG_A276488FB6B8426896EB6C3CCB2150EA
+#endif // G42CORE_HG_A276488FB6B8426896EB6C3CCB2150EA

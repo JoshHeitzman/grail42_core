@@ -6,8 +6,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 * http://directory.fsf.org/wiki/License:Boost1.0
 * http://en.wikipedia.org/wiki/Boost_Software_License                */
 
-#ifndef MACRO_PREFIX_HG_1A3225450B2B4C4D98A955B5DA88EDDC
-#define MACRO_PREFIX_HG_1A3225450B2B4C4D98A955B5DA88EDDC
+#ifndef G42CORE_HG_1A3225450B2B4C4D98A955B5DA88EDDC
+#define G42CORE_HG_1A3225450B2B4C4D98A955B5DA88EDDC
 #pragma warning(push)
 #pragma warning(disable : 4068)
 #pragma once
@@ -66,4 +66,4 @@ struct sparse_vector_list_vector_tag {};
 
 G42CORE_METACODE_END_NAMESPACES
 
-#endif // MACRO_PREFIX_HG_1A3225450B2B4C4D98A955B5DA88EDDC
+#endif // G42CORE_HG_1A3225450B2B4C4D98A955B5DA88EDDC

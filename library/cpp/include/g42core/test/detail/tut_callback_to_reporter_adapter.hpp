@@ -6,8 +6,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 * http://directory.fsf.org/wiki/License:Boost1.0
 * http://en.wikipedia.org/wiki/Boost_Software_License                */
 
-#ifndef MACRO_PREFIX_HG_B23E23313A314046AAA5963A99D9CE74
-#define MACRO_PREFIX_HG_B23E23313A314046AAA5963A99D9CE74
+#ifndef G42CORE_HG_B23E23313A314046AAA5963A99D9CE74
+#define G42CORE_HG_B23E23313A314046AAA5963A99D9CE74
 #pragma warning(push)
 #pragma warning(disable : 4068)
 #pragma once
@@ -25,6 +25,7 @@ namespace detail
 template <class Reporter>
 class tut_callback_to_reporter_adapter : public tut::callback
 {
+G42CORE_MC_NOT_COPYABLE(tut_callback_to_reporter_adapter)
 public:
     tut_callback_to_reporter_adapter():
         all_ok_(true),
@@ -104,4 +105,4 @@ private:
 
 G42CORE_TEST_END_NAMESPACES
 
-#endif // MACRO_PREFIX_HG_B23E23313A314046AAA5963A99D9CE74
+#endif // G42CORE_HG_B23E23313A314046AAA5963A99D9CE74

@@ -6,8 +6,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 * http://directory.fsf.org/wiki/License:Boost1.0
 * http://en.wikipedia.org/wiki/Boost_Software_License                */
 
-#ifndef MACRO_PREFIX_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
-#define MACRO_PREFIX_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
+#ifndef G42CORE_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
+#define G42CORE_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
 #pragma warning(push)
 #pragma warning(disable : 4068)
 #pragma once
@@ -26,7 +26,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include <boost/mpl/identity.hpp>
 #endif
 
-#ifndef MACRO_PREFIX_HG_53D3543A200E49EAA74FDA95197C8F9F
+#ifndef G42CORE_HG_53D3543A200E49EAA74FDA95197C8F9F
 #include "namespace.hpp"
 #endif
 
@@ -147,4 +147,4 @@ struct unique_name ## _ {}; \
 typedef G42CORE_METACODE_NS sparse_vector_with_list<unique_name ## _, vector_index> unique_name; \
 G42CORE_MC_SVWL_INITIALIZE_AT(unique_name, vector_index, type_)
 
-#endif // MACRO_PREFIX_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
+#endif // G42CORE_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
