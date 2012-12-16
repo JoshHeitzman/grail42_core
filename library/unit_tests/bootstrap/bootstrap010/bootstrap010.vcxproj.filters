@@ -113,5 +113,14 @@
     <ClCompile Include="basictests_reporter_outstream.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="trivialtests_tut_adapter1.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\trivialtests_tut_adapter.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trivialtests_tut_adapter2.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

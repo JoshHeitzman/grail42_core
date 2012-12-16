@@ -53,6 +53,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include <boost/static_assert.hpp>
 
+#include <boost/preprocessor/stringize.hpp>
+
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/at.hpp>
 #include <boost/mpl/identity.hpp>
