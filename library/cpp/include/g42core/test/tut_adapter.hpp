@@ -8,10 +8,12 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #ifndef G42CORE_HG_B51A3C840B644C4E8D02FB145152DC3D
 #define G42CORE_HG_B51A3C840B644C4E8D02FB145152DC3D
-#pragma warning(push)
-#pragma warning(disable : 4068)
-#pragma once
-#pragma warning(pop)
+
+#ifndef G42CORE_HG_C03ABA22C2A04F5FB419E6A771232810
+#include "detail/detail_tut_adapter.hpp"
+#endif
+
+G42CORE_MC_PRAGMA_ONCE
 
 #define G42CORE_TEST_BEGIN_GROUP G42CORE_TEST_TUT_BEGIN_GROUP
 #define G42CORE_TEST_END_GROUP G42CORE_TEST_TUT_END_GROUP

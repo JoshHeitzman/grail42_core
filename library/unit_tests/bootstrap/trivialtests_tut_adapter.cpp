@@ -11,10 +11,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 // While this is heavy handed, GCC does not provide a way to just disable the following warning:
 // warning : 'g42::core::metacode::detail::svlw_element<g42::core::metacode::sparse_vector_with_list<g42::core::test::detail::tut_test_objects_for_svl, 0>, 16>' has a base 'g42::core::metacode::detail::svlw_elment_set<g42::core::metacode::sparse_vector_with_list<g42::core::test::detail::tut_test_objects_for_svl, 0>, 16, tut::test_object<<unnamed>::g42_tut_test_group_identifier16> >' whose type uses the anonymous namespace
-#pragma warning(push)
-#pragma warning(disable : 4068) // unknown pragma
-#pragma GCC system_header
-#pragma warning(pop)
+G42CORE_MC_GCC_DISABLE_ALL_WARNINGS
 
 // The test only verifies that the TUT internal adapter API compiles correctly, links correctly 
 // and that that the successful test executions show up in the summary output.  Failures have to be

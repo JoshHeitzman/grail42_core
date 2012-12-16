@@ -8,10 +8,6 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #ifndef G42CORE_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
 #define G42CORE_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
-#pragma warning(push)
-#pragma warning(disable : 4068)
-#pragma once
-#pragma warning(pop)
 
 // TODO create xhtml documentation for this, possibly by using doc comments and generating
 // documentation via the MSVC compiler.
@@ -32,6 +28,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 // The header guard check omitted as this should be the one and only inclusion of this file
 #include "detail/detail_sparse_vector_with_list.hpp"
+
+G42CORE_MC_PRAGMA_ONCE
 
 G42CORE_METACODE_BEGIN_NAMESPACES
 

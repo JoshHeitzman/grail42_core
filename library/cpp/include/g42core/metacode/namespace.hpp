@@ -8,10 +8,6 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #ifndef G42CORE_HG_53D3543A200E49EAA74FDA95197C8F9F
 #define G42CORE_HG_53D3543A200E49EAA74FDA95197C8F9F
-#pragma warning(push)
-#pragma warning(disable : 4068)
-#pragma once
-#pragma warning(pop)
 
 #ifndef G42CORE_HG_DA28A37B28C9478581C4EF3ED6FB6402
 #include "namespaces.hpp"
@@ -19,6 +15,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #ifndef G42CORE_HG_CCE88B0DB5234238A7166647329CDA70
 #include "../namespace.hpp"
 #endif
+
+G42CORE_MC_PRAGMA_ONCE
 
 #ifndef G42CORE_METACODE_NAMESPACE
 #define G42CORE_METACODE_NAMESPACE metacode

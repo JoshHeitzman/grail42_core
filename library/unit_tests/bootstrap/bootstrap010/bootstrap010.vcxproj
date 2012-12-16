@@ -338,8 +338,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\detail_sparse_vector_with_list.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\pragmas_gcc.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\pragmas_msvc.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespace.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\namespaces.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\pragmas.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\sparse_vector_with_list.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\classes.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\type_constraints.hpp" />

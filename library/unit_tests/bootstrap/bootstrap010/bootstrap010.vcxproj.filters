@@ -90,6 +90,15 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\type_constraints.hpp">
       <Filter>C/C++ Header Files\g42core\metacode</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\pragmas.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\pragmas_gcc.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\pragmas_msvc.hpp">
+      <Filter>C/C++ Header Files\g42core\metacode\detail</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap010.cpp">

@@ -8,14 +8,12 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #ifndef G42CORE_HG_B23E23313A314046AAA5963A99D9CE74
 #define G42CORE_HG_B23E23313A314046AAA5963A99D9CE74
-#pragma warning(push)
-#pragma warning(disable : 4068)
-#pragma once
-#pragma warning(pop)
 
 #ifndef TUT_RUNNER_H_GUARD
 #include <tut/tut_runner.hpp>
 #endif
+
+G42CORE_MC_PRAGMA_ONCE
 
 G42CORE_TEST_BEGIN_NAMESPACES
 

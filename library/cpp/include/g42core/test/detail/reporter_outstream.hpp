@@ -8,10 +8,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #ifndef G42CORE_HG_A533B033358A43CB9FC53C9C607EC0AE
 #define G42CORE_HG_A533B033358A43CB9FC53C9C607EC0AE
-#pragma warning(push)
-#pragma warning(disable : 4068)
-#pragma once
-#pragma warning(pop)
+
+G42CORE_MC_PRAGMA_ONCE
 
 G42CORE_TEST_BEGIN_NAMESPACES
 

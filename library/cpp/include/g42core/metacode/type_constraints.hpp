@@ -8,10 +8,6 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #ifndef G42CORE_HG_B4A6B60C2F81410EAAC81298B88F61AD
 #define G42CORE_HG_B4A6B60C2F81410EAAC81298B88F61AD
-#pragma warning(push)
-#pragma warning(disable : 4068)
-#pragma once
-#pragma warning(pop)
 
 #include <type_traits>
 
@@ -22,6 +18,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #ifndef G42CORE_53D3543A200E49EAA74FDA95197C8F9F
 #include "namespace.hpp"
 #endif
+
+G42CORE_MC_PRAGMA_ONCE
 
 G42CORE_METACODE_BEGIN_NAMESPACES
 

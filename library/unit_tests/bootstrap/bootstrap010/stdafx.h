@@ -9,10 +9,10 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #ifndef HG_6ED6281E3B354BAE95FD2C7E72CAF8D7
 #define HG_6ED6281E3B354BAE95FD2C7E72CAF8D7
 
-#pragma warning(push)
-#pragma warning(disable : 4068)
-#pragma once
-#pragma warning(pop)
+#ifndef G42CORE_HG_56B1D5B02B3F4B3695F15A06AFE668B3
+#include "g42core/metacode/pragmas.hpp"
+#endif
+G42CORE_MC_PRAGMA_ONCE
 
 #include <stdio.h>
 
