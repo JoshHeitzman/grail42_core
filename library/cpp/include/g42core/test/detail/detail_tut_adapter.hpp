@@ -136,4 +136,24 @@ namespace tut { \
     __FILE__ "(" BOOST_PP_STRINGIZE(__LINE__) "): " BOOST_PP_STRINGIZE(Expression), \
     Expression);
 
+// REVIEW this isn't exposed in the public interface, as the design may not be
+// correct yet.
+#define G42CORE_TEST_TUT_BEGIN_GROUP_NAMED(GroupName) \
+struct GroupName {}; \
+typedef tut::test_group< \
+        GroupName, \
+        G42CORE_TEST_TUT_MAX_TESTS_PER_GROUP> \
+    BOOST_PP_CAT(g42core_tut_test_group, __LINE__); \
+G42CORE_MC_SVWL_INITIALIZE_AT( \
+    G42CORE_METACODE_NS sparse_vector_with_list< \
+        G42CORE_TEST_NS detail::tut_test_objects_for_svl BOOST_PP_COMMA() 0>, \
+    __LINE__, \
+    BOOST_PP_CAT(g42core_tut_test_group, __LINE__)::object) \
+static BOOST_PP_CAT(g42core_tut_test_group, __LINE__) \
+    BOOST_PP_CAT(g42core_tut_test_group_, __LINE__)(BOOST_PP_STRINGIZE(GroupName)); \
+G42CORE_TEST_TUT_TESTS_IN_GROUP_DECL(vector_to_list_index); \
+G42CORE_MC_SVWL_INITIALIZE_AT( \
+    G42CORE_TEST_TUT_TESTS_IN_GROUP_REF(), __LINE__, boost::mpl::void_) \
+namespace tut {
+
 #endif // G42CORE_HG_C03ABA22C2A04F5FB419E6A771232810

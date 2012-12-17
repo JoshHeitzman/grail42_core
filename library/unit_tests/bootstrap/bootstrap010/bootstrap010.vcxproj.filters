@@ -131,5 +131,8 @@
     <ClCompile Include="trivialtests_tut_adapter2.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\trivial_ng_tests_tut_adapter.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
