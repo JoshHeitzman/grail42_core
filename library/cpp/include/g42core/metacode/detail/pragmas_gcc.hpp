@@ -11,9 +11,9 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #if defined(__GNUC__)
 #define G42CORE_MC_PRAGMA_ONCE _Pragma("once")
-#define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS _Pragma("GCC system_header")
+#define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS_IN_INCLUDE_FILE _Pragma("GCC system_header")
 #else
-#define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS
+#define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS_IN_INCLUDE_FILE
 #endif // defined(__GNUC__)
 
 G42CORE_MC_PRAGMA_ONCE
