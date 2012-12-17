@@ -12,7 +12,15 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #ifndef G42CORE_HG_56B1D5B02B3F4B3695F15A06AFE668B3
 #include "g42core/metacode/pragmas.hpp"
 #endif
+
 G42CORE_MC_PRAGMA_ONCE
+
+G42CORE_MC_WARNING_PUSH
+
+G42CORE_MC_MSVC_WARNING_DISABLE_4389
+G42CORE_MC_MSVC_WARNING_DISABLE_4512
+
+G42CORE_MC_GCC_DISABLE_WARNING_SIGN_COMPARE
 
 #include <stdio.h>
 
@@ -67,6 +75,8 @@ G42CORE_MC_PRAGMA_ONCE
 
 #include <turtle/function.hpp>
 #include <turtle/mock.hpp>
+
+G42CORE_MC_WARNING_POP
 
 #include "g42core/metacode/type_constraints.hpp"
 

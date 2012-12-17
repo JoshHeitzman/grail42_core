@@ -11,9 +11,18 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #if defined(__GNUC__)
 #define G42CORE_MC_PRAGMA_ONCE _Pragma("once")
+#if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6)
+#define G42CORE_MC_WARNING_PUSH _Pragma("GCC diagnostic push")
+#define G42CORE_MC_WARNING_POP _Pragma("GCC diagnostic pop")
+#else // __GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ >= 6)
+#define G42CORE_MC_WARNING_PUSH
+#define G42CORE_MC_WARNING_POP
+#endif // __GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ >= 6)
 #define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS_IN_INCLUDE_FILE _Pragma("GCC system_header")
-#else
+#define G42CORE_MC_GCC_DISABLE_WARNING_SIGN_COMPARE _Pragma("GCC diagnostic ignored\"-Wsign-compare\"")
+#else // defined(__GNUC__)
 #define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS_IN_INCLUDE_FILE
+#define G42CORE_MC_GCC_DISABLE_WARNING_SIGN_COMPARE
 #endif // defined(__GNUC__)
 
 G42CORE_MC_PRAGMA_ONCE

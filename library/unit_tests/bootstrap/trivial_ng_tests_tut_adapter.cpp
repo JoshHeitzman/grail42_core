@@ -9,6 +9,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include "stdafx.h"
 
 #include "g42core/test/namespace.hpp"
+#include "g42core/metacode/classes.hpp"
 #include "g42core/test/detail/detail_tut_adapter.hpp"
 
 // The test only verifies that the TUT internal adapter API compiles correctly, links correctly 

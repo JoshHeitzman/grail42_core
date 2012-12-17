@@ -39,7 +39,7 @@ struct tut_main
     static int run(Reporter&& reporter)
     {
         tut::test_runner_singleton runner;
-        (runner);
+        ((void)runner);
         Callback<Reporter> callback(std::move(reporter));
         tut::test_runner_singleton::get().set_callback(&callback);
         tut::test_runner_singleton::get().run_tests();

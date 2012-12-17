@@ -28,6 +28,7 @@ namespace detail
 
 class tut_test_group_name
 {
+G42CORE_MC_NOT_COPYABLE(tut_test_group_name)
 public:
     tut_test_group_name(const char* sourcefilename):
         name(std::move(unique_name_from_source_filename(sourcefilename)))

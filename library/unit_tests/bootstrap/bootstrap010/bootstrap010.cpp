@@ -13,7 +13,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 int faux_main()
 {
 	tut::test_runner_singleton tut_runner;
-	(tut_runner);
+	((void)tut_runner);
 	tut::reporter reporter;
 	tut_runner.get().set_callback(&reporter);
 	tut_runner.get().run_tests();
@@ -34,9 +34,9 @@ int faux_main()
 #if defined(HWC_PLATFORM_WIN32) || (defined(HWC_PLATFORM_NACL) && defined(HWC_PLATFORM_NACL_STANDALONE))
 
 #if defined(HWC_PLATFORM_WIN32)
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain(int , _TCHAR* [])
 #elif defined(HWC_PLATFORM_NACL_STANDALONE)
-int main(int argc, char* argv[])
+int main(int , char* [])
 #endif
 {
     return faux_main();

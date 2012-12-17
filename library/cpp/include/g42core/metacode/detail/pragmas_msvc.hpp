@@ -11,6 +11,14 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #if defined(_MSC_VER)
 #define G42CORE_MC_PRAGMA_ONCE __pragma(once)
+#define G42CORE_MC_WARNING_PUSH __pragma(warning(push))
+#define G42CORE_MC_WARNING_POP __pragma(warning(pop))
+#define G42CORE_MC_MSVC_WARNING_DISABLE_4512 __pragma(warning(disable:4512))
+#define G42CORE_MC_MSVC_WARNING_DISABLE_4389 __pragma(warning(disable:4389))
+// assignment operator could not be generated
+#else
+#define G42CORE_MC_MSVC_WARNING_DISABLE_4512
+#define G42CORE_MC_MSVC_WARNING_DISABLE_4389
 #endif // defined(_MSC_VER)
 
 G42CORE_MC_PRAGMA_ONCE

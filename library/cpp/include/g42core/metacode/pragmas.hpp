@@ -19,6 +19,12 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #ifndef G42CORE_MC_PRAGMA_ONCE
 #define G42CORE_MC_PRAGMA_ONCE
 #endif
+#ifndef G42CORE_MC_WARNING_PUSH
+#define G42CORE_MC_WARNING_PUSH
+#endif
+#ifndef G42CORE_MC_WARNING_POP
+#define G42CORE_MC_WARNING_POP
+#endif
 #ifndef G42CORE_HG_74FF227A606D42A994740B2A4B7438A6
 #include "detail/pragmas_msvc.hpp"
 #endif
