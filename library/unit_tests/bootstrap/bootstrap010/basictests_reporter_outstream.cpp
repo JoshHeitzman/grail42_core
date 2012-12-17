@@ -24,13 +24,14 @@ namespace
     tut::factory tf("basictests_reporter_outstream");
 }
 
+typedef G42CORE_TEST_NS detail::reporter_outstream<G42CORE_TEST_NS detail::reporter_outstream_policies<std::ostream> > reporter_with_ostream;
+
 namespace tut
 {
     template<>
     template<>
     void object::test<1>()
     {
-        typedef G42CORE_TEST_NS detail::reporter_outstream<G42CORE_TEST_NS detail::reporter_outstream_policies<std::ostream> > reporter_with_ostream;
         typedef G42CORE_METACODE_NS ensure_not_copyable<reporter_with_ostream> ensure_not_copyable;
         {
         std::string expected_header_content("*** Tests started  ***\n");
@@ -42,12 +43,12 @@ namespace tut
         ensure(contents == expected_header_content);
         ss.str(std::string());
         // All three should be included in the content even when 0
-        reporter.tests_completed(0, 0, 0);
+        reporter.on_tests_complete(0, 0, 0);
         contents = ss.str();
         ensure(contents == "*** Tests complete: 0 passed, 0 failed, 0 skipped ***\n");
         ss.str(std::string());
         // message should work with literal char string
-        reporter.message("");
+        reporter.on_complete_message("");
         contents = ss.str();
         ensure(contents == "\n");
         ss.str(std::string());
@@ -57,7 +58,7 @@ namespace tut
         ensure(contents == "");
         ss.str(std::string());
         // message should also work with std::string
-        reporter.message(std::string("message 2"));
+        reporter.on_complete_message(std::string("message 2"));
         contents = ss.str();
         ensure(contents == "message 2\n");
         ss.str(std::string());
@@ -72,10 +73,24 @@ namespace tut
         ensure(contents == expected_header_content);
         ss.str(std::string());
         // Now test that again with numbers other than zero including a multidigit numbers.
-        reporter.tests_completed(1, 12, 1000);
+        reporter.on_tests_complete(1, 12, 1000);
         contents = ss.str();
         ensure(contents == "*** Tests complete: 1 passed, 12 failed, 1000 skipped ***\n");
         ss.str(std::string());
         }
     }
+}
+
+#include "g42core/metacode/classes.hpp"
+#include "g42core/test/namespace.hpp"
+// Although the contents are not executed, this is included so that it will be parsed as early as
+// as possible in the build order.
+#include "g42core/test/detail/tut_main.hpp"
+
+namespace {
+void not_called()
+{
+    std::stringstream ss;
+    G42CORE_TEST_TUT_RUN_TESTS(reporter_with_ostream(ss), 0, nullptr);
+}
 }

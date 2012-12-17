@@ -99,6 +99,9 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\pragmas_msvc.hpp">
       <Filter>C/C++ Header Files\g42core\metacode\detail</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\tut_main.hpp">
+      <Filter>C/C++ Header Files\g42core\test\detail</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap010.cpp">

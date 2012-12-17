@@ -127,13 +127,18 @@ public:
     {
     }
 
+    reporter_outstream(reporter_outstream<Policies>&& rhs):
+        outstream_(rhs.outstream_)
+    {
+    }
+
     void on_tests_starting()
     {
         header::append_to_stream(outstream_);
     }
 
     template <class T>
-    void message(const T& t)
+    void on_complete_message(const T& t)
     {
         outstream_ << t;
         line_ending::append_to_stream(outstream_);
@@ -145,7 +150,7 @@ public:
         outstream_ << t;
     }
 
-    void tests_completed(unsigned int passed, unsigned int failed, unsigned int skipped = 0)
+    void on_tests_complete(unsigned int passed, unsigned int failed, unsigned int skipped = 0)
     {
         footer::append_to_stream(outstream_, passed, failed, skipped);
     }

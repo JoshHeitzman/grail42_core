@@ -37,7 +37,7 @@ public:
         passed(0),
         skipped(0),
         failed(0),
-        reporter(reporter) {}
+        reporter(std::move(reporter)) {}
 
     virtual ~tut_callback_to_reporter_adapter() {}
 
