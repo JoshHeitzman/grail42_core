@@ -13,9 +13,11 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include <boost/preprocessor/stringize.hpp>
 #endif
 
+#define G42CORE_MC_SVWL_GCC_ANON_NS_WARN_WORKAROUND
 #ifndef G42CORE_HG_E42C88FF6CA64B4686A2C6CC0B85DE31
 #include "g42core/metacode/sparse_vector_with_list.hpp"
 #endif
+#undef G42CORE_MC_SVWL_GCC_ANON_NS_WARN_WORKAROUND
 
 G42CORE_MC_PRAGMA_ONCE
 

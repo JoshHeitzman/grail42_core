@@ -134,11 +134,15 @@ template <> struct at_impl<
 }}
 #endif
 
+#if !defined(__GNUC__) || !defined(G42CORE_MC_SVWL_GCC_ANON_NS_WARN_WORKAROUND)
 #define G42CORE_MC_SVWL_INITIALIZE_AT(unique_name, vector_index, type_) \
-G42CORE_METACODE_BEGIN_NAMESPACES namespace detail { \
-template <> struct svlw_element<unique_name, vector_index> : \
-    svlw_elment_set<unique_name, vector_index, type_> {}; \
-} G42CORE_METACODE_END_NAMESPACES
+    G42CORE_MC_DETAIL_SVWL_INITIALIZE_AT(unique_name, vector_index, type_)
+#else
+// For gcc replicating the above results in an error that appears to be related to when 
+// BOOST_PP_COMMA is expanded.  There is may be a portable fix to that issue, but the this is
+// already a workaround another another gcc specific issue, so stop recursing here.
+#define G42CORE_MC_SVWL_INITIALIZE_AT G42CORE_MC_DETAIL_SVWL_INITIALIZE_AT
+#endif
 
 #define G42CORE_MC_SVWL_INITIALIZE_SEQUENCE(unique_name, vector_index, type_) \
 struct unique_name ## _ {}; \
