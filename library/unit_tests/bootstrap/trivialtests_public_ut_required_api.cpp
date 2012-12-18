@@ -6,9 +6,9 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 * http://directory.fsf.org/wiki/License:Boost1.0
 * http://en.wikipedia.org/wiki/Boost_Software_License                */
 
-// The test only verifies that the TUT internal adapter API compiles correctly, links correctly 
-// and that that the successful test executions show up in the summary output.  Failures have to be
-// manually validated by tweaking the preprocessor logic below.
+// The test only verifies that the public API compiles correctly, links correctly and that 
+// the successful test executions show up in the summary output.  Failures have to be manually 
+// validated by tweaking the preprocessor logic below.
 
 G42CORE_TEST_BEGIN_GROUP()
 
