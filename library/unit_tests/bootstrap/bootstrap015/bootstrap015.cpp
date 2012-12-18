@@ -8,10 +8,11 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
+#include "g42core/test/main.hpp"
+
 int faux_main()
 {
-    printf("Hello world.\n");
-    return 0;
+    return G42CORE_TEST_RUN_TESTS();
 }
 
 // 1 means that the nexe will be run from the commandline in sel_ldr (e.g. using %grail42_core_cmd%\nacl\faux_console\run_nexe_standalone.cmd)

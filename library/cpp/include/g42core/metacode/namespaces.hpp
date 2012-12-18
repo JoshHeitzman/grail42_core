@@ -10,7 +10,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #define G42CORE_HG_DA28A37B28C9478581C4EF3ED6FB6402
 
 #ifndef G42CORE_HG_56B1D5B02B3F4B3695F15A06AFE668B3
-#include "pragmas.hpp"
+#include "detail/pragmas.hpp"
 #endif
 G42CORE_MC_PRAGMA_ONCE
 
