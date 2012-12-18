@@ -7,6 +7,12 @@
 @rem * http://en.wikipedia.org/wiki/Boost_Software_License
 
 @if not "%grail42_cmd_verbose_logging"=="2" echo off
+
+if "%grail42_root%"=="" set grail42_root=%~dp0
+set grail42_root=%grail42_root:\core\tools\windows_any\=%
+if not exist %grail42_root% set grail42_root=
+if not exist %grail42_root%\core\tools\windows_any\ set grail42_root=
+
 setlocal ENABLEDELAYEDEXPANSION
 
 if "%grail42_root%"=="" goto Usage
@@ -20,7 +26,8 @@ echo Sets environment variables for the core project.
 echo.
 echo SET_ENV_CORE
 echo.
-echo The environment variable grail42_root must be set execution will fail.
+echo The environment variable grail42_root may need to be explicilty set prior to execution, 
+echo although it can usually be inferred.
 echo.
 echo For example:
 echo.

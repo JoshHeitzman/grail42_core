@@ -7,6 +7,7 @@
 @rem * http://en.wikipedia.org/wiki/Boost_Software_License
 
 @if not "%grail42_cmd_verbose_logging"=="2" echo off
+if "%grail42_core_root%"=="" call "%~dp0\set_env_core.cmd"
 setlocal ENABLEDELAYEDEXPANSION
 
 if "%1"=="" goto Usage
