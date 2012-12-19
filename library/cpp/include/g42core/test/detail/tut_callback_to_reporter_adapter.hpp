@@ -86,7 +86,7 @@ public:
     }
 
     // The common reporter does not include an equivalent as not all unit test frameworks 
-    // provide this event.  Explicitly makes these noops in case base ever provides non-noop
+    // provide these event.  Explicitly make these noops in case base ever provides non-noop
     // implementations.
     virtual void group_started(const std::string&) {}
     virtual void group_completed(const std::string&) {}
