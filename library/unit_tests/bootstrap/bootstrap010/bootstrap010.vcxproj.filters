@@ -102,6 +102,9 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\tut_main.hpp">
       <Filter>C/C++ Header Files\g42core\test\detail</Filter>
     </ClInclude>
+    <ClInclude Include="..\reporter_mock.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap010.cpp">

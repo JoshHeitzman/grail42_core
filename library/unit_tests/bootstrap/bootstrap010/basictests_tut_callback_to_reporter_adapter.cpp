@@ -12,26 +12,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include "g42core/test/namespace.hpp"
 #include "g42core/test/detail/tut_callback_to_reporter_adapter.hpp"
 
-template <class M1>
-class mock_reporter : public mock::object
-{
-public:
-    MOCK_NON_CONST_METHOD_EXT( on_tests_starting, 0, void(), on_tests_starting )
-    MOCK_NON_CONST_METHOD_EXT_TPL( on_complete_message, 1, void(const M1& t), on_complete_message )
-    MOCK_NON_CONST_METHOD_EXT( on_tests_complete, 3, void(unsigned int, unsigned int, unsigned int), on_tests_complete )
-};
-
-namespace tut
-{
-    struct basictest_tut_callback_to_reporter_adapter{};
-    typedef test_group<basictest_tut_callback_to_reporter_adapter> factory;
-    typedef factory::object object;
-}
-
-namespace
-{
-    tut::factory tf("basictest_tut_callback_to_reporter_adapter");
-}
+#include "../reporter_mock.hpp"
 
 namespace tut
 {
@@ -39,8 +20,8 @@ namespace tut
     template<>
     void object::test<1>()
     {
-        typedef mock_reporter<std::string> mock_reporter_std_string;
-        typedef G42CORE_TEST_NS detail::tut_callback_to_reporter_adapter<mock_reporter_std_string> adapter_with_mock;
+        typedef reporter_mock<std::string> reporter_mock_std_string;
+        typedef G42CORE_TEST_NS detail::tut_callback_to_reporter_adapter<reporter_mock_std_string> adapter_with_mock;
         typedef G42CORE_METACODE_NS ensure_not_copyable<adapter_with_mock> ensure_not_copyable;
 
         // ensure default construction and destruction without overt errors
@@ -58,7 +39,7 @@ namespace tut
         // Verify that a lack of test_completed calls results in 0 passes, 0 fails, all_ok == true,
         // and that calls to on_tests_starting and on_tests_complete occur in the correct order.
         {
-        mock_reporter_std_string reporter;
+        reporter_mock_std_string reporter;
         adapter_with_mock adapter(std::move(reporter));
         mock::sequence s;
         MOCK_EXPECT( reporter.on_tests_starting ).once().in(s);
@@ -73,7 +54,7 @@ namespace tut
         // Verify that group_started and group_completed don't call through to to reporter or 
         // impact the result of all_ok, or cause passed or failed tests to be reported.
         {
-        mock_reporter_std_string reporter;
+        reporter_mock_std_string reporter;
         adapter_with_mock adapter(std::move(reporter));
         MOCK_EXPECT( reporter.on_tests_starting ).never();
         MOCK_EXPECT( reporter.on_complete_message ).never();
@@ -98,7 +79,7 @@ namespace tut
         // Verify that ok status don't result in on_complete_message being called, all_ok == true,
         // and the correct number of passed tests is reported.
         {
-        mock_reporter_std_string reporter;
+        reporter_mock_std_string reporter;
         adapter_with_mock adapter(std::move(reporter));
 
         MOCK_EXPECT( reporter.on_tests_starting ).once();
@@ -115,7 +96,7 @@ namespace tut
         // Verify that a fail status result in on_complete_message being called, all_ok == false,
         // and the correct number of passed and failed tests being reported.
         {
-        mock_reporter_std_string reporter;
+        reporter_mock_std_string reporter;
         adapter_with_mock adapter(std::move(reporter));
 
         MOCK_EXPECT( reporter.on_tests_starting ).once();
@@ -131,7 +112,7 @@ namespace tut
 
         // Verify that all remaining status codes are treated as failures
         {
-        mock_reporter_std_string reporter;
+        reporter_mock_std_string reporter;
         adapter_with_mock adapter(std::move(reporter));
         MOCK_EXPECT( reporter.on_tests_starting ).once();
         MOCK_EXPECT( reporter.on_complete_message ).exactly(6);
