@@ -17,10 +17,10 @@ G42CORE_MC_PRAGMA_ONCE
 
 G42CORE_MC_WARNING_PUSH
 
-G42CORE_MC_MSVC_WARNING_DISABLE_4389
-G42CORE_MC_MSVC_WARNING_DISABLE_4512
+G42CORE_MC_MSVC_PRAGMA(warning(disable:4389)) // 'operator' : signed/unsigned mismatch
+G42CORE_MC_MSVC_PRAGMA(warning(disable:4512)) // 'class' : assignment operator could not be generated
 
-G42CORE_MC_GCC_DISABLE_WARNING_SIGN_COMPARE
+G42CORE_MC_GCC_PRAGMA("GCC diagnostic ignored\"-Wsign-compare\"")
 
 #include <stdio.h>
 

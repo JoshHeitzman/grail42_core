@@ -10,19 +10,26 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #define G42CORE_HG_9BAC0A6A9CAB43D2AAC38B5DBBB60F08
 
 #if defined(__GNUC__)
+
 #define G42CORE_MC_PRAGMA_ONCE _Pragma("once")
+#define G42CORE_MC_GCC_PRAGMA(p) _Pragma(p)
+
 #if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6)
-#define G42CORE_MC_WARNING_PUSH _Pragma("GCC diagnostic push")
-#define G42CORE_MC_WARNING_POP _Pragma("GCC diagnostic pop")
+#define G42CORE_MC_WARNING_PUSH G42CORE_MC_GCC_PRAGMA("GCC diagnostic push")
+#define G42CORE_MC_WARNING_POP G42CORE_MC_GCC_PRAGMA("GCC diagnostic pop")
 #else // __GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ >= 6)
 #define G42CORE_MC_WARNING_PUSH
 #define G42CORE_MC_WARNING_POP
 #endif // __GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ >= 6)
-#define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS_IN_INCLUDE_FILE _Pragma("GCC system_header")
-#define G42CORE_MC_GCC_DISABLE_WARNING_SIGN_COMPARE _Pragma("GCC diagnostic ignored\"-Wsign-compare\"")
+
 #else // defined(__GNUC__)
-#define G42CORE_MC_GCC_DISABLE_ALL_WARNINGS_IN_INCLUDE_FILE
-#define G42CORE_MC_GCC_DISABLE_WARNING_SIGN_COMPARE
+
+#if !defined(G42CORE_MC_PRAGMA_ONCE) || !defined(G42CORE_MC_WARNING_PUSH) || !defined(G42CORE_MC_WARNING_POP)
+#error G42CORE_MC_PRAGMA_ONCE, G42CORE_MC_WARNING_PUSH, and G42CORE_MC_WARNING_POP must be defined prior to the inclusion of pragmas_gcc.hpp
+#endif
+
+#define G42CORE_MC_GCC_PRAGMA(p)
+
 #endif // defined(__GNUC__)
 
 G42CORE_MC_PRAGMA_ONCE

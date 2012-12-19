@@ -17,7 +17,7 @@ G42CORE_MC_PRAGMA_ONCE
 
 G42CORE_MC_WARNING_PUSH
 
-G42CORE_MC_MSVC_WARNING_DISABLE_4512
+G42CORE_MC_MSVC_PRAGMA(warning(disable:4512)) // 'class' : assignment operator could not be generated
 
 #ifndef TUT_H_GUARD
 #include <tut/tut.hpp>
