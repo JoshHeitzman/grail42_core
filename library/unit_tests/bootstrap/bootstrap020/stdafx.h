@@ -13,6 +13,12 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
+G42CORE_MC_WARNING_PUSH
+
+G42CORE_MC_MSVC_PRAGMA(warning(disable:4389)) // 'operator' : signed/unsigned mismatch
+
+G42CORE_MC_GCC_PRAGMA("GCC diagnostic ignored\"-Wsign-compare\"")
+
 #include <stdio.h>
 
 #if !defined(HWC_PLATFORM_WIN32) && !defined(HWC_PLATFORM_ANDROID) && !defined(HWC_PLATFORM_NACL)
@@ -44,7 +50,13 @@ G42CORE_MC_PRAGMA_ONCE
 
 #endif // HWC_PLATFORM_*
 
-#include <g42core/test/test.hpp>
-#include <g42core/test/short_defines.hpp>
+#include <turtle/function.hpp>
+#include <turtle/mock.hpp>
+
+G42CORE_MC_WARNING_POP
+
+#include "g42core/metacode/type_constraints.hpp"
+#include "g42core/test/test.hpp"
+#include "g42core/test/short_defines.hpp"
 
 #endif // HG_6ED6281E3B354BAE95FD2C7E72CAF8D7
