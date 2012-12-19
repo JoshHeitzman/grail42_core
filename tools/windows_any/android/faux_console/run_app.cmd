@@ -6,7 +6,7 @@
 @rem * http://directory.fsf.org/wiki/License:Boost1.0
 @rem * http://en.wikipedia.org/wiki/Boost_Software_License
 
-@if not "%grail42_cmd_verbose_logging"=="2" echo off
+@if not "%grail42_cmd_verbose_logging%"=="2" echo off
 setlocal ENABLEDELAYEDEXPANSION
 
 if "%1"=="" goto Usage
@@ -40,6 +40,10 @@ echo     Android SDK.
 echo   * The grail42_core_cmd environment variable is required to be set by
 echo     running set_env_core.cmd.
 echo.
+echo If grail42_android_faux_console_run_app_timeout is set then that number
+echo of seconds will be waited  before giving up on the app to complete
+echo execution.  Defaults to 10.
+echo.
 echo If the grail42_cmd_verbose_logging environment variable is set then 
 echo additional diagnostic output will be emitted.
 echo.
@@ -51,6 +55,9 @@ endlocal & CMD /C EXIT 1
 goto :EOF
 
 :ArgsValidated
+
+if not defined grail42_android_faux_console_run_app_timeout set grail42_android_faux_console_run_app_timeout=10
+
 rem Clear the current log state
 "%android_sdk_root%\platform-tools\adb.exe" logcat -c
 rem Start the activity in the package
@@ -81,19 +88,27 @@ if /i %iterations% GEQ 4 (
 	if defined grail42_cmd_verbose_logging ("%android_sdk_root%\platform-tools\adb.exe" logcat -d) else ("%android_sdk_root%\platform-tools\adb.exe" logcat -d -v raw stderr:I stdout:I *:S)
 	endlocal & CMD /C EXIT 1 & goto :EOF
 )
-call "%grail42_core_cmd%\sleep.cmd" 1
 set /a iterations=%iterations%+1
+call "%grail42_core_cmd%\sleep.cmd" 1
 goto WaitForRemoteAppExecutionToStart
 :RemoteAppExecutionStarted
 if defined grail42_cmd_verbose_logging echo RemoteAppExecutionStarted
 
-
+set iterations=1
 :WaitForRemoteAppExecutionToComplete
 if defined grail42_cmd_verbose_logging echo WaitForRemoteAppExecutionToComplete
 rem These identifiers are emitted by the FauxConsoleActivity included in the template and are used to determine that app has finished execution.
 rem It is possible for the app to terminate and not emit these identifier due to a preceding error.
 "%android_sdk_root%\platform-tools\adb.exe" logcat -d -v raw 13380324612F4E3184624E7AD706141A:I *:S | findstr "DAB25FDC5A974392AA39ED7928A31561" > nul
 if not ERRORLEVEL 1 goto RemoteAppExecutionComplete
+if /i %iterations% GEQ %grail42_android_faux_console_run_app_timeout% (
+	echo.
+    echo ERROR - app execution start was not detected after %iterations% attempts.  Dumping log data.
+	echo.
+	if defined grail42_cmd_verbose_logging ("%android_sdk_root%\platform-tools\adb.exe" logcat -d) else ("%android_sdk_root%\platform-tools\adb.exe" logcat -d -v raw stderr:I stdout:I *:S)
+	endlocal & CMD /C EXIT 1 & goto :EOF
+)
+set /a iterations=%iterations%+1
 call "%grail42_core_cmd%\sleep.cmd" 1
 goto WaitForRemoteAppExecutionToComplete
 :RemoteAppExecutionComplete
