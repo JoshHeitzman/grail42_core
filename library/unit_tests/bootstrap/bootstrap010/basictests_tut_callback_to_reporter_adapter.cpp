@@ -16,6 +16,18 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 namespace tut
 {
+    struct basictest_tut_callback_to_reporter_adapter{};
+    typedef test_group<basictest_tut_callback_to_reporter_adapter> factory;
+    typedef factory::object object;
+}
+
+namespace
+{
+    tut::factory tf("basictest_tut_callback_to_reporter_adapter");
+}
+
+namespace tut
+{
     template<>
     template<>
     void object::test<1>()
