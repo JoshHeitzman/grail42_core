@@ -372,6 +372,7 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\tut_callback_to_reporter_adapter.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\tut_main.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\namespace.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\short_defines.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\tut_adapter.hpp" />
     <ClInclude Include="..\reporter_mock.hpp" />
     <ClInclude Include="stdafx.h" />

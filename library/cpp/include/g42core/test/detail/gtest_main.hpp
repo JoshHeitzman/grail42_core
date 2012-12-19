@@ -15,4 +15,49 @@ G42CORE_MC_PRAGMA_ONCE
 #include "gtest_listener_to_reporter_adapter.hpp"
 #endif
 
+#ifndef GTEST_INCLUDE_GTEST_GTEST_H_
+#define GTEST_DONT_DEFINE_TEST 1
+#undef RUN_ALL_TESTS
+#include <gtest\gtest.h>
+#undef RUN_ALL_TESTS
+#endif
+
+G42CORE_TEST_BEGIN_NAMESPACES
+
+namespace detail {
+
+template <template<typename> class Listener = G42CORE_TEST_NS detail::gtest_listener_to_reporter_adapter>
+struct gtest_main
+{
+    // REVIEW included in prototype.  Still needed?
+    static const std::string& identifier()
+    {
+        static const std::string id("gtest");
+        return id;
+    }
+
+    template <class OutStream>
+    static void append_to_stream(OutStream& stream)
+    {
+        stream << "(via Google Test)";
+    }
+
+    template <typename Reporter>
+    static int run(Reporter&& reporter, int argc, char* argv[])
+    {
+        ::testing::InitGoogleTest(&argc, argv);
+        delete ::testing::UnitTest::GetInstance()->listeners().Release(::testing::UnitTest::GetInstance()->listeners().default_result_printer());
+
+        auto p = new Listener<Reporter>(std::move(reporter));
+        ::testing::UnitTest::GetInstance()->listeners().Append(p);
+        return (::testing::UnitTest::GetInstance()->Run());
+    }
+};
+
+} // namespace detail
+
+G42CORE_TEST_END_NAMESPACES
+
+#define G42CORE_TEST_GTEST_RUN_TESTS(Reporter, Argc, Argv) G42CORE_TEST_NS detail::gtest_main<>::run<>(Reporter, Argc, Argv)
+
 #endif // G42CORE_HG_B8737564E8B04D229051777FB21AD7BF

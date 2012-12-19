@@ -56,7 +56,5 @@ G42CORE_MC_GCC_PRAGMA("GCC diagnostic ignored\"-Wsign-compare\"")
 G42CORE_MC_WARNING_POP
 
 #include "g42core/metacode/type_constraints.hpp"
-#include "g42core/test/test.hpp"
-#include "g42core/test/short_defines.hpp"
 
 #endif // HG_6ED6281E3B354BAE95FD2C7E72CAF8D7

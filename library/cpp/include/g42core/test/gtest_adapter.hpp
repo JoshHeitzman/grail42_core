@@ -15,15 +15,16 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
-#ifndef G42CORE_HG_977EE3D68FC449FDB779CEF0955C0194
-#include "../metacode/classes.hpp"
+#ifndef GTEST_INCLUDE_GTEST_GTEST_H_
+#define GTEST_DONT_DEFINE_TEST 1
+#include <gtest\gtest.h>
 #endif
 
 #ifndef G42CORE_HG_F41077F7FEC44C0DB50ADE014085572E
 #include "detail/detail_gtest_adapter.hpp"
 #endif
 
-#if 0
+#if 1
 #define G42CORE_TEST_BEGIN_GROUP G42CORE_TEST_GTEST_BEGIN_GROUP
 #define G42CORE_TEST_END_GROUP G42CORE_TEST_GTEST_END_GROUP
 #define G42CORE_TEST_DEFINE_TEST G42CORE_TEST_GTEST_DEFINE_TEST

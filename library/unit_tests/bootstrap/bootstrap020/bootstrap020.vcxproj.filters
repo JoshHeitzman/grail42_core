@@ -68,5 +68,8 @@
     <ClCompile Include="basictests_gtest_listener_to_reporter_adapter.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="trivialtests_gtest_public_ut_required_api2.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

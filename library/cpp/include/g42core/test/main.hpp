@@ -22,6 +22,16 @@ G42CORE_MC_PRAGMA_ONCE
 typedef G42CORE_TEST_NS detail::reporter_outstream<
     G42CORE_TEST_NS detail::reporter_outstream_policies<std::ostream> > reporter_with_ostream;
 
+G42CORE_MC_WARNING_PUSH
+
+G42CORE_MC_MSVC_PRAGMA(warning(disable:4512)) // 'class' : assignment operator could not be generated
+
+#ifndef TUT_H_GUARD
+#include <tut/tut.hpp>
+#endif
+
+G42CORE_MC_WARNING_POP
+
 #include "detail/tut_main.hpp"
 
 #define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_TUT_RUN_TESTS(reporter_with_ostream(std::cout), 0, nullptr)

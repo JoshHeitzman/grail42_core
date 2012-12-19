@@ -8,6 +8,9 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
+#include "g42core/test/test.hpp"
+#include "g42core/test/short_defines.hpp"
+
 #include "../reporter_mock.hpp"
 
 #include "g42core/test/detail/gtest_listener_to_reporter_adapter.hpp"

@@ -13,7 +13,9 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 int faux_main()
 {
-    return G42CORE_TEST_RUN_TESTS();
+    int result = G42CORE_TEST_RUN_TESTS();
+    int gtest_result = G42CORE_TEST_GTEST_RUN_TESTS(reporter_with_ostream(std::cout), 0, 0);
+    return result | gtest_result;
 }
 
 // 1 means that the nexe will be run from the commandline in sel_ldr (e.g. using %grail42_core_cmd%\nacl\faux_console\run_nexe_standalone.cmd)
