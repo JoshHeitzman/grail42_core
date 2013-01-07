@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{A2A90C23-1A6D-4EF6-B1F0-65FF5303C8EF}") = "bootstrap025", "bootstrap025.vcxproj", "{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Android = Debug|Android
+		Debug|NaCl32 = Debug|NaCl32
+		Debug|NaCl64 = Debug|NaCl64
+		Debug|PPAPI = Debug|PPAPI
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Android = Release|Android
+		Release|NaCl32 = Release|NaCl32
+		Release|NaCl64 = Release|NaCl64
+		Release|PPAPI = Release|PPAPI
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|Android.ActiveCfg = Debug|Android
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|Android.Build.0 = Debug|Android
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|NaCl32.ActiveCfg = Debug|NaCl32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|NaCl32.Build.0 = Debug|NaCl32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|NaCl64.ActiveCfg = Debug|NaCl64
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|NaCl64.Build.0 = Debug|NaCl64
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|PPAPI.ActiveCfg = Debug|PPAPI
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|PPAPI.Build.0 = Debug|PPAPI
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|Win32.Build.0 = Debug|Win32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|x64.ActiveCfg = Debug|x64
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Debug|x64.Build.0 = Debug|x64
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|Android.ActiveCfg = Release|Android
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|Android.Build.0 = Release|Android
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|NaCl32.ActiveCfg = Release|NaCl32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|NaCl32.Build.0 = Release|NaCl32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|NaCl64.ActiveCfg = Release|NaCl64
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|NaCl64.Build.0 = Release|NaCl64
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|PPAPI.ActiveCfg = Release|PPAPI
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|PPAPI.Build.0 = Release|PPAPI
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|Win32.ActiveCfg = Release|Win32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|Win32.Build.0 = Release|Win32
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|x64.ActiveCfg = Release|x64
+		{9619BF2F-5980-4AEB-8619-F37A1A8A4D14}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
+

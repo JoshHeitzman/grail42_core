@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="C/C++ Source Files">
+      <UniqueIdentifier>{7F161AA8-4BD4-495A-BD05-DB75753A1850}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx</Extensions>
+    </Filter>
+    <Filter Include="C/C++ Header Files">
+      <UniqueIdentifier>{39FF4AB4-B630-4722-9B27-C28207D48830}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Android Package Files">
+      <UniqueIdentifier>{09E96614-A2B3-49D7-8818-02F80100E5F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Java Source Files">
+      <UniqueIdentifier>{0A9A2C24-03DC-472B-889D-0F7B3D52EEFF}</UniqueIdentifier>
+      <Extensions>java;class</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="android_package\AndroidManifest.xml">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="android_package\src\grail42\core\bootstrap025\FauxConsole.java">
+      <Filter>Java Source Files</Filter>
+    </None>
+    <None Include="android_package\build.xml">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="android_package\res\values\strings.xml">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="android_package\project.properties">
+      <Filter>Android Package Files</Filter>
+    </None>
+    <None Include="index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\cpputest_output_to_reporter_adapter.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\detail_cpputest_adapter.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\cpputest_adapter.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bootstrap025.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basictests_cpputest_output_to_reporter_adapter.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\trivialtests_public_ut_required_api.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trivialtests_cpputest_public_ut_required_api1.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

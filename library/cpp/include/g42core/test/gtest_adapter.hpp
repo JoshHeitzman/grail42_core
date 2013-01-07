@@ -17,7 +17,7 @@ G42CORE_MC_PRAGMA_ONCE
 
 #ifndef GTEST_INCLUDE_GTEST_GTEST_H_
 #define GTEST_DONT_DEFINE_TEST 1
-#include <gtest\gtest.h>
+#include <gtest/gtest.h>
 #endif
 
 #ifndef G42CORE_HG_F41077F7FEC44C0DB50ADE014085572E
