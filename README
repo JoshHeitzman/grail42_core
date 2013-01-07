@@ -15,9 +15,11 @@ have been tested with, are located in the sibling project Grail42 Templates (see
 Grail42 project referenced above).
 
 Also provided is a Python implementation of a partial prototype for querying 
-annotations about any file, directory, items in a directory, or directory tree with the 
-annotations stored in plain text config files (probably XML and JSON as well later) at 
-one or more of a number of well known locations relative to the target.
+annotations about any file, directory, items in a directory, or directory tree.  The 
+annotations stored in plain text config files (probably XML and JSON as well later) 
+and located at well known locations relative to the thing annotated.  The prototype
+currently only provides support for annotating directory trees with the annotations
+located in a file parallel to the tree.
 
 --------------------------------------------------------------------------------
 
