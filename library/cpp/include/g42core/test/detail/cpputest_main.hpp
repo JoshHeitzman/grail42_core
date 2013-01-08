@@ -6,10 +6,9 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 * http://directory.fsf.org/wiki/License:Boost1.0
 * http://en.wikipedia.org/wiki/Boost_Software_License                */
 
-#include "stdafx.h"
+#ifndef G42CORE_HG_A0C6177CD91C4C04AA76C8D5E62F7BF4
+#define G42CORE_HG_A0C6177CD91C4C04AA76C8D5E62F7BF4
 
-#include "g42core/test/test.hpp"
+G42CORE_MC_PRAGMA_ONCE
 
-// Shouldn't get any link error when compiling the same tests again in a different translation unit
-#include "../trivialtests_public_ut_required_api.cpp"
-
+#endif // G42CORE_HG_A0C6177CD91C4C04AA76C8D5E62F7BF4

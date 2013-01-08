@@ -48,6 +48,9 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\cpputest_adapter.hpp">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\cpputest_main.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap025.cpp">
