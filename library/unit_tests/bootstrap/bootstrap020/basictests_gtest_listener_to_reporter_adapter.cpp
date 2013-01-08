@@ -63,7 +63,7 @@ DEFINE_TEST()
     VERIFY(mock::verify());
     }
 
-    // Verify that noop methods don't call through to to reporter or cause passed/failed tests to 
+    // Verify that noop methods don't call through to reporter or cause passed/failed tests to 
     // be reported.
     {
     reporter_mock_std_string reporter;

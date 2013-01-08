@@ -63,7 +63,7 @@ namespace tut
         ensure(adapter.all_ok());
         }
 
-        // Verify that group_started and group_completed don't call through to to reporter or 
+        // Verify that group_started and group_completed don't call through to reporter or 
         // impact the result of all_ok, or cause passed or failed tests to be reported.
         {
         reporter_mock_std_string reporter;
