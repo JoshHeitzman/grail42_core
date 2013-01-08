@@ -54,6 +54,7 @@ public:
         // FRAGILE gtest doesn't provide a hook for the raw message, so it is necessary to extract
         // the raw message from the formatted message, so any changes in the formatting will break
         // this.
+        // TODO handle find or substr failing.
         std::string s(result.message());
         const std::string::size_type i = sizeof(G42CORE_TEST_DETAIL_GTEST_LISTENER_MESSAGE_HEADER)-1;
         s = s.substr(i, s.find('\n')-i);
