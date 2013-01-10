@@ -15,6 +15,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "g42core/test/detail/cpputest_output_to_reporter_adapter.hpp"
 
+#include <CppUTest/Utest.h>
+
 BEGIN_TESTS()
 
 DEFINE_TEST()

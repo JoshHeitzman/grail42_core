@@ -462,6 +462,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="trivialtests_cpputest_public_ut_required_api1.cpp" />
+    <ClCompile Include="trivialtests_cpputest_public_ut_required_api2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

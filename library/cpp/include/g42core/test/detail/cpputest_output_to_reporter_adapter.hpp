@@ -11,12 +11,19 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
+#ifndef D_SimpleString_h
+#include <CppUTest/SimpleString.h>
+#endif
+#ifndef D_TestOutput_h
+#include <CppUTest/TestOutput.h>
+#endif
 G42CORE_MC_WARNING_PUSH
 G42CORE_MC_MSVC_PRAGMA(warning(disable:4512)) // 'TestResult' : assignment operator could not be generated
-G42CORE_MC_MSVC_PRAGMA(warning(disable:4290)) // C++ exception specification ignored except to indicate a function is not __declspec(nothrow)
-#include <CppUTest/CommandLineTestRunner.h>
-#include <CppUTest/TestOutput.h>
+#include <CppUTest/TestResult.h>
 G42CORE_MC_WARNING_POP
+#ifndef D_TestFailure_H
+#include <CppUTest/TestFailure.h>
+#endif
 
 G42CORE_TEST_BEGIN_NAMESPACES
 
@@ -26,17 +33,16 @@ namespace detail
 template <class Reporter>
 class cpputest_reporter_adapter : public TestOutput
 {
+G42CORE_MC_NOT_COPYABLE(cpputest_reporter_adapter)
 public:
-    explicit cpputest_reporter_adapter():
+    cpputest_reporter_adapter():
         passed(0),
-        skipped(0),
         failed(0),
         assertion_failures(0),
         reporter() {}
 
     explicit cpputest_reporter_adapter(Reporter&& reporter):
         passed(0),
-        skipped(0),
         failed(0),
         assertion_failures(0),
         reporter(std::move(reporter)) {}
@@ -50,7 +56,7 @@ public:
 
     virtual void printTestsEnded(const TestResult&)
     {
-        reporter.on_tests_complete(passed, failed, skipped);
+        reporter.on_tests_complete(passed, failed, 0);
     }
 
     virtual void printCurrentTestEnded(const TestResult& res)
@@ -98,7 +104,6 @@ public:
     virtual void flush() {}
 private:
     int passed;
-    int skipped;
     int failed;
     int assertion_failures;
     Reporter reporter;

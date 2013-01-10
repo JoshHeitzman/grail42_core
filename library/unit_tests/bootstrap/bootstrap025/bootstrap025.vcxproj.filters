@@ -68,5 +68,8 @@
     <ClCompile Include="trivialtests_cpputest_public_ut_required_api1.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="trivialtests_cpputest_public_ut_required_api2.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
