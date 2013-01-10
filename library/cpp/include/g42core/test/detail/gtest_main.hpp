@@ -15,13 +15,6 @@ G42CORE_MC_PRAGMA_ONCE
 #include "gtest_listener_to_reporter_adapter.hpp"
 #endif
 
-#ifndef GTEST_INCLUDE_GTEST_GTEST_H_
-#define GTEST_DONT_DEFINE_TEST 1
-#undef RUN_ALL_TESTS
-#include <gtest\gtest.h>
-#undef RUN_ALL_TESTS
-#endif
-
 G42CORE_TEST_BEGIN_NAMESPACES
 
 namespace detail {

@@ -9,8 +9,16 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #ifndef G42CORE_HG_C03ABA22C2A04F5FB419E6A771232810
 #define G42CORE_HG_C03ABA22C2A04F5FB419E6A771232810
 
+#ifndef BOOST_PREPROCESSOR_CAT_HPP
+#include <boost/preprocessor/cat.hpp>
+#endif
+
 #ifndef BOOST_PREPROCESSOR_STRINGIZE_HPP
 #include <boost/preprocessor/stringize.hpp>
+#endif
+
+#ifndef BOOST_PREPROCESSOR_PUNCTUATION_COMMA_HPP
+#include <boost/preprocessor/comma.hpp>
 #endif
 
 #define G42CORE_MC_SVWL_GCC_ANON_NS_WARN_WORKAROUND

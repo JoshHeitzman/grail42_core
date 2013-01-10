@@ -8,8 +8,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
-#include <g42core/test/main.hpp>
-#include <g42core/test/detail/gtest_main.hpp>
+#include "g42core/test/main.hpp"
+#include "g42core/test/detail/gtest_main.hpp"
 
 int faux_main()
 {

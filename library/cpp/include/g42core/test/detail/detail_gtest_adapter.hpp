@@ -11,6 +11,10 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
+#ifndef BOOST_PREPROCESSOR_CAT_HPP
+#include <boost/preprocessor/cat.hpp>
+#endif
+
 #define G42CORE_TEST_GTEST_BEGIN_GROUP() namespace {
 
 #define G42CORE_TEST_GTEST_END_GROUP() }
