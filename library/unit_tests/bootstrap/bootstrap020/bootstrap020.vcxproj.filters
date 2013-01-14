@@ -51,6 +51,9 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\gtest_main.hpp">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\concurrency\thread.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap020.cpp">
@@ -69,6 +72,9 @@
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
     <ClCompile Include="trivialtests_gtest_public_ut_required_api2.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trivialtests_thread.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
   </ItemGroup>

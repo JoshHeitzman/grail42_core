@@ -196,7 +196,7 @@
     </AntBuild>
     <ClCompile>
       <PreprocessorDefinitions>HWC_PLATFORM_ANDROID;$(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>-std=c++0x %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-std=c++0x -fpermissive %(AdditionalOptions)</AdditionalOptions>
       <GccExceptionHandling>true</GccExceptionHandling>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <Warnings>AllWarnings</Warnings>
@@ -309,7 +309,7 @@
     </AntBuild>
     <ClCompile>
       <PreprocessorDefinitions>HWC_PLATFORM_ANDROID;$(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalOptions>-std=c++0x %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-std=c++0x -fpermissive %(AdditionalOptions)</AdditionalOptions>
       <GccExceptionHandling>true</GccExceptionHandling>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -430,6 +430,7 @@
     <None Include="index.html" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\cpp\include\g42core\concurrency\thread.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\detail_gtest_adapter.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\gtest_listener_to_reporter_adapter.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\gtest_main.hpp" />
@@ -461,6 +462,7 @@
     </ClCompile>
     <ClCompile Include="trivialtests_gtest_public_ut_required_api1.cpp" />
     <ClCompile Include="trivialtests_gtest_public_ut_required_api2.cpp" />
+    <ClCompile Include="trivialtests_thread.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

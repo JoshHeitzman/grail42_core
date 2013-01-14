@@ -357,6 +357,7 @@
     <None Include="index.html" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\cpp\include\g42core\concurrency\namespace.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\detail_sparse_vector_with_list.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\pragmas_gcc.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\metacode\detail\pragmas_msvc.hpp" />

@@ -13,6 +13,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
+G42CORE_MC_GCC_PRAGMA("GCC diagnostic ignored\"-Wunused-variable\"")
+
 G42CORE_MC_WARNING_PUSH
 
 G42CORE_MC_MSVC_PRAGMA(warning(disable:4389)) // 'operator' : signed/unsigned mismatch

@@ -31,6 +31,9 @@
     <Filter Include="C/C++ Header Files\g42core\test\detail">
       <UniqueIdentifier>{62567418-90b6-42ea-aaa3-353f5381ef54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="C/C++ Header Files\g42core\concurrency">
+      <UniqueIdentifier>{52925508-9afc-4c47-8cb8-01482005e6de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="android_package\AndroidManifest.xml">
@@ -107,6 +110,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\cpp\include\g42core\test\short_defines.hpp">
       <Filter>C/C++ Header Files\g42core\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\concurrency\namespace.hpp">
+      <Filter>C/C++ Header Files\g42core\concurrency</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
