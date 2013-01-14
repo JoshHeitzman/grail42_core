@@ -42,7 +42,7 @@ DEFINE_TEST()
     MOCK_EXPECT( reporter.on_tests_complete ).once().with(0, 0, 0).in(s);
     adapter.printTestsStarted();
     adapter.printTestsEnded(testResultDefault);
-    ensure(mock::verify());
+    VERIFY(mock::verify());
     }
 
     // Verify that noop methods don't call through to reporter or cause passed/failed tests to 
@@ -69,7 +69,7 @@ DEFINE_TEST()
     adapter.printTestRun(0, 0);
     adapter.setProgressIndicator("");
     adapter.flush();
-    ensure(mock::verify());
+    VERIFY(mock::verify());
     mock::reset();
 
     mock::sequence s;
@@ -90,7 +90,7 @@ DEFINE_TEST()
     adapter.setProgressIndicator("");
     adapter.flush();
     adapter.printTestsEnded(testResultDefault);
-    ensure(mock::verify());
+    VERIFY(mock::verify());
     }
 
     // Verify that a result with no failures deson't result in on_complete_message being called
@@ -109,7 +109,7 @@ DEFINE_TEST()
     adapter.printCurrentTestEnded(testResultDefault1);
     adapter.printCurrentTestEnded(testResultDefault2);
     adapter.printTestsEnded(testResultDefault);
-    ensure(mock::verify());
+    VERIFY(mock::verify());
     }
 
     // Verify that a result with failures results in on_complete_message being called
@@ -137,7 +137,7 @@ DEFINE_TEST()
     adapter.printCurrentTestEnded(testResultDefault1);
     adapter.printCurrentTestEnded(testResultDefault2);
     adapter.printTestsEnded(testResultDefault);
-    ensure(mock::verify());
+    VERIFY(mock::verify());
     }
 }
 

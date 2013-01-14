@@ -99,7 +99,7 @@ DEFINE_TEST()
     adapter.OnEnvironmentsTearDownEnd(ut);
     adapter.OnTestIterationEnd(ut, 0);
     adapter.OnTestProgramEnd(ut);
-    ensure(mock::verify());
+    VERIFY(mock::verify());
     }
 
     // Verify that calling OnTestPartResult results in on_complete_message being called
@@ -113,7 +113,7 @@ DEFINE_TEST()
     adapter.OnTestProgramStart(ut);
     adapter.OnTestPartResult(result);
     adapter.OnTestProgramEnd(ut);
-    ensure(mock::verify());
+    VERIFY(mock::verify());
     }
 }
 
