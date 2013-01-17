@@ -20,6 +20,7 @@ G42CORE_MC_PRAGMA_ONCE
 #endif
 #else
 #ifndef BOOST_THREAD_THREAD_HPP
+#define BOOST_THREAD_THROW_IF_PRECONDITION_NOT_SATISFIED
 #include <boost\thread\thread.hpp>
 #endif
 #endif
@@ -36,6 +37,7 @@ G42CORE_CONCURRENCY_BEGIN_NAMESPACES
 // threading requirements of test library.  This implementation is not thread safe.
 class thread
 {
+G42CORE_MC_NOT_COPYABLE(thread)
 public:
     explicit thread(void *(*f)(void *), void* arg1):
         joined(false)
