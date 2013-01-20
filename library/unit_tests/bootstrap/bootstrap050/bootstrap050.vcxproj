@@ -433,6 +433,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\cpp\include\g42core\concurrency\atomic.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_registration.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_registry.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_executor_single_process.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_executor_single_thread.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part.hpp" />
     <ClInclude Include="atomic_trivial_test.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

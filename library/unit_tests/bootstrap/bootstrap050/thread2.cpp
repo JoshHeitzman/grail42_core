@@ -12,6 +12,9 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include <g42core/test/test.hpp>
 #include <g42core/test/short_defines.hpp>
 
+#include "g42core/test/detail/test_executor_single_thread.hpp"
+
+
 #include "atomic_trivial_test.hpp"
 
 BEGIN_TESTS()
