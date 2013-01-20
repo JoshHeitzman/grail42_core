@@ -16,7 +16,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 // TODO replace with mock that ensures add was called.
 struct mock_registry
 {
-    static void add(const G42CORE_TEST_NS detail::test_part_base_common&)
+    static void add(const G42CORE_TEST_NS detail::test_part_base_common*)
     {
     }
 };
@@ -37,9 +37,9 @@ public:
             G42CORE_TEST_NS detail::basic_source_code_info_holder(filename, line)),
         ran(false)
     {}
-    virtual void run()
+    virtual void run() const
     {
-        ran = true;
+        const_cast<test1*>(this)->ran = true;
     }
     bool ran;
 };
@@ -53,7 +53,7 @@ public:
             G42CORE_TEST_NS detail::logical_process_and_thread_holder(threadId, processId), 
             G42CORE_TEST_NS detail::basic_source_code_info_holder(filename, line))
     {}
-    virtual void run()
+    virtual void run() const
     {
     }
 };

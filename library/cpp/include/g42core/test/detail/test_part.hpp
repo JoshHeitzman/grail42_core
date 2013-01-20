@@ -11,9 +11,11 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
-G42CORE_TEST_BEGIN_NAMESPACES
-
+#ifndef BOOST_INTEGER_TRAITS_HPP
 #include <boost/integer_traits.hpp>
+#endif
+
+G42CORE_TEST_BEGIN_NAMESPACES
 
 namespace detail {
 
@@ -100,7 +102,7 @@ public:
         return sci;
     }
 
-    virtual void run() = 0;
+    virtual void run() const = 0;
 
 private:
     const char* id;
@@ -124,7 +126,7 @@ protected:
     test_part_base_with_policy(const char* id, logical_process_and_thread_holder&& lpt, basic_source_code_info_holder&& sci):
         test_part_base_common(id, std::move(lpt), std::move(sci))
     {
-        Policy::registry::add(*this);
+        Policy::registry::add(this);
     }
 
     ~test_part_base_with_policy() {}

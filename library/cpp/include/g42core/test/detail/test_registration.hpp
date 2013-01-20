@@ -34,8 +34,8 @@ public: \
             G42CORE_TEST_NS detail::logical_process_and_thread_holder(G42CORE_TEST_NS detail::logical_process_and_thread_holder::special_thread_ids::primary), \
             G42CORE_TEST_NS detail::basic_source_code_info_holder(__FILE__, __LINE__)) \
     {} \
-    virtual void run(); \
+    virtual void run() const; \
 } instance; \
-void BOOST_PP_CAT(test_, __LINE__)::run()
+void BOOST_PP_CAT(test_, __LINE__)::run() const
 
 #endif // G42CORE_HG_7BC3322891C04BA2BF239B77475FA2AE

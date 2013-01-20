@@ -19,20 +19,38 @@ G42CORE_TEST_BEGIN_NAMESPACES
 
 namespace detail {
 
+template <class Registry>
 struct test_executor_single_thread_without_test_part_validation
 {
-    static int run()
+    typedef Registry registry;
+
+    template <class Reporter>
+    static int run(Reporter&& reporter)
     {
-        // Combine test parts into tests
+        reporter.on_tests_starting();
 
-        // Notify reporter that tests are starting
+        auto range = registry::range();
 
-        /*
-        Execute each test part, catching any test infrastructure exceptions
-        */
+        unsigned int passed = 0;
+        unsigned int failed = 0;
 
-        // Notify reporter that tests are complete with the number of passed, failed, and skipped
-        return 0;
+        for(auto i = range.begin(); i != range.end(); ++i)
+        {
+            try
+            {
+                (*i)->run();
+                ++passed;
+            }
+            catch(...) // TODO change to catch a custom exception type only
+            {
+                // TODO extract error message from custom exception and call reporter.on_complete_message
+                ++failed;
+            }
+        }
+
+        reporter.on_tests_complete(passed, failed, 0);
+
+        return failed ? 1 : 0;
     };
 };
 
