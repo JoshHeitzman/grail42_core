@@ -44,4 +44,6 @@ G42CORE_MC_PRAGMA_ONCE
 
 #endif // HWC_PLATFORM_*
 
+#include <cstring>
+
 #endif // HG_6ED6281E3B354BAE95FD2C7E72CAF8D7
