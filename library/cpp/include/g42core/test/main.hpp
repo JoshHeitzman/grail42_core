@@ -15,9 +15,15 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
+#ifndef G42CORE_HG_977EE3D68FC449FDB779CEF0955C0194
 #include "../metacode/classes.hpp"
+#endif
+#ifndef G42CORE_HG_A276488FB6B8426896EB6C3CCB2150EA
 #include "namespace.hpp"
+#endif
+#ifndef G42CORE_HG_A533B033358A43CB9FC53C9C607EC0AE
 #include "detail/reporter_outstream.hpp"
+#endif
 
 typedef G42CORE_TEST_NS detail::reporter_outstream<
     G42CORE_TEST_NS detail::reporter_outstream_policies<std::ostream> > reporter_with_ostream;
