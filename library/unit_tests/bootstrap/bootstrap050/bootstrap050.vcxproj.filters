@@ -60,6 +60,9 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_registration.hpp">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\verification_failure.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap050.cpp">

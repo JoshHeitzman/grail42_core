@@ -15,6 +15,10 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 G42CORE_MC_PRAGMA_ONCE
 
+#ifndef G42CORE_HG_D77D32DBE31648699B84FAED892E1723
+#include "verification_failure.hpp"
+#endif
+
 G42CORE_TEST_BEGIN_NAMESPACES
 
 namespace detail {
@@ -41,7 +45,7 @@ struct test_executor_single_thread_without_test_part_validation
                 (*i)->run();
                 ++passed;
             }
-            catch(...) // TODO change to catch a custom exception type only
+            catch(const verification_failure&)
             {
                 // TODO extract error message from custom exception and call reporter.on_complete_message
                 ++failed;

@@ -29,29 +29,69 @@ struct mock_registry1
 
 typedef G42CORE_TEST_NS detail::test_part_base_policy<mock_registry1> test_part_base_policy_mock_registry;
 
-class test2 : public G42CORE_TEST_NS detail::test_part_base_with_policy<test_part_base_policy_mock_registry>
+class test3 : public G42CORE_TEST_NS detail::test_part_base_with_policy<test_part_base_policy_mock_registry>
 {
 public:
-    test2(const char* id, int threadId, int processId, const char* filename, int line):
+    test3(bool fail = false):
         G42CORE_TEST_NS detail::test_part_base_with_policy<test_part_base_policy_mock_registry>(
-            id,
-            G42CORE_TEST_NS detail::logical_process_and_thread_holder(threadId, processId), 
-            G42CORE_TEST_NS detail::basic_source_code_info_holder(filename, line))
+            "",
+            G42CORE_TEST_NS detail::logical_process_and_thread_holder(0, 0), 
+            G42CORE_TEST_NS detail::basic_source_code_info_holder("", 0)),
+        fail(fail)
     {}
     virtual void run() const
     {
+        if(fail)
+        {
+            throw G42CORE_TEST_NS detail::verification_failure();
+        }
     }
+private:
+    bool fail;
 };
 
-test2 t1("", 0, 0, "", 0);
-test2 t2("", 0, 0, "", 0);
+test3 t1;
+test3 t2(true);
+test3 t3;
+test3 t4(true);
 
 #include <list>
 
-struct mock_registry
+typedef std::list<const G42CORE_TEST_NS detail::test_part_base_common*> sequence_type;
+typedef boost::iterator_range<sequence_type::iterator> range_type;
+
+struct mock_registryA
 {
-    typedef std::list<const G42CORE_TEST_NS detail::test_part_base_common*> sequence_type;
-    typedef boost::iterator_range<sequence_type::iterator> range_type;
+    static range_type range()
+    {
+        static sequence_type s;
+        if(!s.size())
+        {
+            s.push_back(&t1);
+        }
+        return range_type(s);
+    }
+};
+
+typedef G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<mock_registryA> executorA;
+
+struct mock_registryB
+{
+    static range_type range()
+    {
+        static sequence_type s;
+        if(!s.size())
+        {
+            s.push_back(&t2);
+        }
+        return range_type(s);
+    }
+};
+
+typedef G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<mock_registryB> executorB;
+
+struct mock_registry2
+{
     static range_type range()
     {
         static sequence_type s;
@@ -59,12 +99,31 @@ struct mock_registry
         {
             s.push_back(&t1);
             s.push_back(&t2);
+            s.push_back(&t3);
+            s.push_back(&t4);
         }
         return range_type(s);
     }
 };
 
-typedef G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<mock_registry> executor;
+typedef G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<mock_registry2> executor;
+
+struct mock_registry3
+{
+    static range_type range()
+    {
+        static sequence_type s;
+        if(!s.size())
+        {
+            s.push_back(&t2);
+            s.push_back(&t4);
+            s.push_back(&t1);
+        }
+        return range_type(s);
+    }
+};
+
+typedef G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<mock_registry3> executor2;
 
 #include "g42core/test/main.hpp"
 
@@ -76,10 +135,30 @@ DEFINE_TEST()
 {
     atomicTrivialTest.ExecuteOnEachThread();
 
+    {
+    std::stringstream ss;
+    executorA::run<>(reporter_with_ostream(ss));
+    std::string s = ss.str();
+    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 1 passed, 0 failed, 0 skipped ***\n"));
+    }
+    {
+    std::stringstream ss;
+    executorB::run<>(reporter_with_ostream(ss));
+    std::string s = ss.str();
+    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 0 passed, 1 failed, 0 skipped ***\n"));
+    }
+    {
     std::stringstream ss;
     executor::run<>(reporter_with_ostream(ss));
     std::string s = ss.str();
-    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 2 passed, 0 failed, 0 skipped ***\n"));
+    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 2 passed, 2 failed, 0 skipped ***\n"));
+    }
+    {
+    std::stringstream ss;
+    executor2::run<>(reporter_with_ostream(ss));
+    std::string s = ss.str();
+    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 1 passed, 2 failed, 0 skipped ***\n"));
+    }
 }
 
 END_TESTS()

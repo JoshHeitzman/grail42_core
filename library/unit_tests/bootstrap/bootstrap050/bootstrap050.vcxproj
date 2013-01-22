@@ -438,6 +438,7 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_executor_single_process.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_executor_single_thread.hpp" />
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part.hpp" />
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\verification_failure.hpp" />
     <ClInclude Include="atomic_trivial_test.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
