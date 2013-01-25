@@ -28,7 +28,7 @@ namespace detail {
 
 struct main_three_threaded
 {
-    static int run()
+    static int run(bool outputOnFailureOnly = false, bool twoThreadsOnly = false)
     {
         std::stringstream tut_ss;
         typedef G42CORE_TEST_NS detail::tut_thread<decltype(tut_ss), G42CORE_TEST_NS detail::reporter_outstream> tut_thread_ss;
@@ -40,20 +40,31 @@ struct main_three_threaded
         gtest_thread_ss gtest_thread_functor(gtest_ss, 0, 0);
         G42CORE_CONCURRENCY_NS thread gtest_thread(gtest_thread_ss::thread_func, &gtest_thread_functor);
 
+        int ret = 0;
+
         std::stringstream cpputest_ss;
-        typedef G42CORE_TEST_NS detail::cpputest_thread<decltype(cpputest_ss), G42CORE_TEST_NS detail::reporter_outstream> cpputest_thread_ss;
-        cpputest_thread_ss cpputest_thread_functor(cpputest_ss, 0, 0);
-        G42CORE_CONCURRENCY_NS thread cpputest_thread(cpputest_thread_ss::thread_func, &cpputest_thread_functor);
+        if(!twoThreadsOnly)
+        { // cpputest crashes when run more than once
+            typedef G42CORE_TEST_NS detail::cpputest_thread<decltype(cpputest_ss), G42CORE_TEST_NS detail::reporter_outstream> cpputest_thread_ss;
+            cpputest_thread_ss cpputest_thread_functor(cpputest_ss, 0, 0);
+            G42CORE_CONCURRENCY_NS thread cpputest_thread(cpputest_thread_ss::thread_func, &cpputest_thread_functor);
+            cpputest_thread.join();
+            ret |= cpputest_thread_functor.result();
+        }
 
-        tut_thread.join();
         gtest_thread.join();
-        cpputest_thread.join();
+        tut_thread.join();
 
-        std::cout << tut_ss.str();
-        std::cout << gtest_ss.str();
-        std::cout << cpputest_ss.str();
+        ret |= tut_thread_functor.result() | gtest_thread_functor.result();
 
-        return tut_thread_functor.result() | gtest_thread_functor.result() | cpputest_thread_functor.result();
+        if(ret != 0 || !outputOnFailureOnly)
+        {
+            std::cout << tut_ss.str();
+            std::cout << gtest_ss.str();
+            std::cout << cpputest_ss.str();
+        }
+
+        return ret;
     }
 };
 
