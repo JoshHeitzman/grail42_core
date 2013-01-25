@@ -33,11 +33,16 @@
     <None Include="android_package\project.properties">
       <Filter>Android Package Files</Filter>
     </None>
-    <None Include="readme.txt" />
     <None Include="index.html" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_registry.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mock_registry.hpp">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
   </ItemGroup>

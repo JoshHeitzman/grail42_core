@@ -430,9 +430,10 @@
     <None Include="android_package\res\values\strings.xml" />
     <None Include="android_package\src\grail42\core\bootstrap055\FauxConsole.java" />
     <None Include="index.html" />
-    <None Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_registry.hpp" />
+    <ClInclude Include="mock_registry.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

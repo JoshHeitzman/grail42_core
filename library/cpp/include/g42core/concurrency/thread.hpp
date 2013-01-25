@@ -29,10 +29,12 @@ G42CORE_MC_PRAGMA_ONCE
 #include "namespace.hpp"
 #endif
 
-G42CORE_CONCURRENCY_BEGIN_NAMESPACES
-
 #ifdef G42CORE_CONCURRENCY_THREAD_REQUIRED
 #include <pthread.h>
+#include <exception>
+
+G42CORE_CONCURRENCY_BEGIN_NAMESPACES
+
 // This is only a partial implementation of std::thread that provides only what is needed for the 
 // threading requirements of test library.  This implementation is not thread safe.
 class thread
@@ -85,12 +87,15 @@ private:
     pthread_t id;
     bool joined;
 };
-#elif __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 4)
-using std::thread;
-#else
-using boost::thread;
-#endif
-
 G42CORE_CONCURRENCY_END_NAMESPACES
+#elif __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 4)
+G42CORE_CONCURRENCY_BEGIN_NAMESPACES
+using std::thread;
+G42CORE_CONCURRENCY_END_NAMESPACES
+#else
+G42CORE_CONCURRENCY_BEGIN_NAMESPACES
+using boost::thread;
+G42CORE_CONCURRENCY_END_NAMESPACES
+#endif
 
 #endif // G42CORE_HG_9C17FE3D4D104BF6A331E62CD2C6AECB

@@ -12,11 +12,13 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include <g42core/test/test.hpp>
 #include <g42core/test/short_defines.hpp>
 
+#include "mock_registry.hpp"
+
 BEGIN_TESTS()
 
 DEFINE_TEST()
 {
-    VERIFY(true);
+    test_func();
 }
 
 END_TESTS()
