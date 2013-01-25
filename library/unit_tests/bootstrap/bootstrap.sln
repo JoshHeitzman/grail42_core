@@ -20,6 +20,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bootstrap050", "bootstrap05
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bootstrap055", "bootstrap055\bootstrap055.vcxproj", "{B97FBA3B-DE2A-4F7B-AE80-5040D229B285}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bootstrap060", "bootstrap060\bootstrap060.vcxproj", "{ADE95957-30E1-4BFB-8A97-8E54D79240DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Android = Debug|Android
@@ -218,6 +220,32 @@ Global
 		{B97FBA3B-DE2A-4F7B-AE80-5040D229B285}.Release|Win32.Build.0 = Release|Win32
 		{B97FBA3B-DE2A-4F7B-AE80-5040D229B285}.Release|x64.ActiveCfg = Release|x64
 		{B97FBA3B-DE2A-4F7B-AE80-5040D229B285}.Release|x64.Build.0 = Release|x64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|Android.ActiveCfg = Debug|Android
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|Android.Build.0 = Debug|Android
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|Android.Deploy.0 = Debug|Android
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|NaCl32.ActiveCfg = Debug|NaCl32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|NaCl32.Build.0 = Debug|NaCl32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|NaCl64.ActiveCfg = Debug|NaCl64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|NaCl64.Build.0 = Debug|NaCl64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|PPAPI.ActiveCfg = Debug|PPAPI
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|PPAPI.Build.0 = Debug|PPAPI
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|Win32.Build.0 = Debug|Win32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|x64.ActiveCfg = Debug|x64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Debug|x64.Build.0 = Debug|x64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|Android.ActiveCfg = Release|Android
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|Android.Build.0 = Release|Android
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|Android.Deploy.0 = Release|Android
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|NaCl32.ActiveCfg = Release|NaCl32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|NaCl32.Build.0 = Release|NaCl32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|NaCl64.ActiveCfg = Release|NaCl64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|NaCl64.Build.0 = Release|NaCl64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|PPAPI.ActiveCfg = Release|PPAPI
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|PPAPI.Build.0 = Release|PPAPI
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|Win32.ActiveCfg = Release|Win32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|Win32.Build.0 = Release|Win32
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|x64.ActiveCfg = Release|x64
+		{ADE95957-30E1-4BFB-8A97-8E54D79240DF}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

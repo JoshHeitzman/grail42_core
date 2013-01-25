@@ -22,7 +22,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 struct mock_registry1
 {
-    static void add(const G42CORE_TEST_NS detail::test_part_base_common*)
+    static void add(const G42CORE_TEST_NS detail::test_part_base_common&)
     {
     }
 };
@@ -43,7 +43,7 @@ public:
     {
         if(fail)
         {
-            throw G42CORE_TEST_NS detail::verification_failure();
+            throw G42CORE_TEST_NS detail::verification_failure(__FILE__, __LINE__, "fail");
         }
     }
 private:
@@ -145,19 +145,22 @@ DEFINE_TEST()
     std::stringstream ss;
     executorB::run<>(G42CORE_TEST_NS detail::reporter_with_ostream(ss));
     std::string s = ss.str();
-    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 0 passed, 1 failed, 0 skipped ***\n"));
+    VERIFY(std::string::npos != s.rfind("1 failed"));
+    VERIFY(std::string::npos != s.rfind("0 passed"));
     }
     {
     std::stringstream ss;
     executor::run<>(G42CORE_TEST_NS detail::reporter_with_ostream(ss));
     std::string s = ss.str();
-    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 2 passed, 2 failed, 0 skipped ***\n"));
+    VERIFY(std::string::npos != s.rfind("2 failed"));
+    VERIFY(std::string::npos != s.rfind("2 passed"));
     }
     {
     std::stringstream ss;
     executor2::run<>(G42CORE_TEST_NS detail::reporter_with_ostream(ss));
     std::string s = ss.str();
-    VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 1 passed, 2 failed, 0 skipped ***\n"));
+    VERIFY(std::string::npos != s.rfind("2 failed"));
+    VERIFY(std::string::npos != s.rfind("1 passed"));
     }
 }
 

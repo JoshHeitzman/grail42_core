@@ -35,7 +35,7 @@ public: \
             G42CORE_TEST_NS detail::basic_source_code_info_holder(__FILE__, __LINE__)) \
     {} \
     virtual void run() const; \
-} instance; \
+} BOOST_PP_CAT(instance_, __LINE__); \
 void BOOST_PP_CAT(test_, __LINE__)::run() const
 
 #endif // G42CORE_HG_7BC3322891C04BA2BF239B77475FA2AE

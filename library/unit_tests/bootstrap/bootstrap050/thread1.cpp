@@ -16,7 +16,7 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 // TODO replace with mock that ensures add was called.
 struct mock_registry
 {
-    static void add(const G42CORE_TEST_NS detail::test_part_base_common*)
+    static void add(const G42CORE_TEST_NS detail::test_part_base_common&)
     {
     }
 };
@@ -64,6 +64,11 @@ G42CORE_TEST_DETAIL_DEFINE_TEST()
 }
 G42CORE_TEST_DETAIL_END_GROUP()
 
+G42CORE_TEST_DETAIL_BEGIN_GROUP()
+G42CORE_TEST_DETAIL_DEFINE_TEST()
+{
+}
+G42CORE_TEST_DETAIL_END_GROUP()
 
 #include "atomic_trivial_test.hpp"
 

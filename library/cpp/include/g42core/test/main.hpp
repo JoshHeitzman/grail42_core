@@ -29,9 +29,13 @@ G42CORE_MC_PRAGMA_ONCE
 
 #include "detail/cpputest_main.hpp"
 
+#define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_CPPUTEST_RUN_TESTS(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout), 0, nullptr)
+
 #elif defined(G42CORE_TEST_FRAMEWORK_GTEST)
 
 #include "detail/gtest_main.hpp"
+
+#define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_GTEST_RUN_TESTS(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout), 0, nullptr)
 
 #elif defined(G42CORE_TEST_FRAMEWORK_TUT)
 
@@ -40,7 +44,12 @@ G42CORE_MC_PRAGMA_ONCE
 #define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_TUT_RUN_TESTS(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout), 0, nullptr)
 
 #else
-#error No default main currently.
+
+#include "detail/test_part_common.hpp"
+#include "detail/test_executor_single_thread.hpp"
+
+#define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<G42CORE_TEST_DEFAULT_TEST_REGISTRY>::run(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout))
+
 #endif
 
 #endif // G42CORE_HG_2F1EAE88DA374E4E817F118B850AB1D7

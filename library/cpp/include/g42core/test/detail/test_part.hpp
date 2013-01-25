@@ -20,10 +20,10 @@ G42CORE_TEST_BEGIN_NAMESPACES
 namespace detail {
 
 // TODO BEGIN move these to a different file
-class basic_source_code_info_holder
+class basic_source_code_info_holder_base
 {
 public:
-    basic_source_code_info_holder(const char* filename, unsigned int line):
+    basic_source_code_info_holder_base(const char* filename, unsigned int line):
         filename_(filename),
         line_(line)
     {}
@@ -36,10 +36,36 @@ public:
     {
         return line_;
     }
+protected:
+    ~basic_source_code_info_holder_base() {}
 private:
     const char* filename_;
     const unsigned int line_;
-    basic_source_code_info_holder& operator=(const basic_source_code_info_holder&);
+    basic_source_code_info_holder_base& operator=(const basic_source_code_info_holder_base&);
+};
+
+class basic_source_code_info_holder : public basic_source_code_info_holder_base
+{
+public:
+    basic_source_code_info_holder(const char* filename, unsigned int line):
+        basic_source_code_info_holder_base(filename, line)
+    {}
+};
+
+class source_code_info_holder : public basic_source_code_info_holder_base
+{
+public:
+    source_code_info_holder(const char* filename, unsigned int line, const char* expression):
+        basic_source_code_info_holder_base(filename, line),
+        expression_(expression)
+    {}
+
+    const char* expression() const
+    {
+        return expression_;
+    }
+private:
+    const char* expression_;
 };
 
 class logical_process_and_thread_holder
@@ -126,7 +152,7 @@ protected:
     test_part_base_with_policy(const char* id, logical_process_and_thread_holder&& lpt, basic_source_code_info_holder&& sci):
         test_part_base_common(id, std::move(lpt), std::move(sci))
     {
-        Policy::registry::add(this);
+        Policy::registry::add(*this);
     }
 
     ~test_part_base_with_policy() {}

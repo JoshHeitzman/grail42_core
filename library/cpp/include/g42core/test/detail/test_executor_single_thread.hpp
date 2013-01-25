@@ -45,9 +45,14 @@ struct test_executor_single_thread_without_test_part_validation
                 (*i)->run();
                 ++passed;
             }
-            catch(const verification_failure&)
+            catch(const verification_failure& ex)
             {
-                // TODO extract error message from custom exception and call reporter.on_complete_message
+                auto sci = ex.source_code_info();
+                std::stringstream ss;
+                ss << sci.filename();
+                ss << '(' << sci.line() << "): ";
+                ss << sci.expression();
+                reporter.on_complete_message(ss.str());
                 ++failed;
             }
         }

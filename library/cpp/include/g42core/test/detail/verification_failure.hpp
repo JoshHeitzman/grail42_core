@@ -18,7 +18,13 @@ namespace detail {
 class verification_failure
 {
 public:
+    verification_failure(const char* filename, unsigned int line, const char* expression):
+        scih(filename, line, expression)
+    {}
 
+    const source_code_info_holder& source_code_info() const { return scih; }
+private:
+    const source_code_info_holder scih;
 };
 
 } // namespace detail
