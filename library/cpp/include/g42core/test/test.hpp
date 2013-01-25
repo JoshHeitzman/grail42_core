@@ -22,8 +22,7 @@ G42CORE_MC_PRAGMA_ONCE
 #elif defined(G42CORE_TEST_FRAMEWORK_TUT)
 #include "tut_adapter.hpp"
 #else
-// TODO replace with grail42 native test framework
-#include "tut_adapter.hpp"
+#error No default test currently.
 #endif
 
 #endif // G42CORE_HG_DD488BE2CF4B45D39736998E9FC5383D

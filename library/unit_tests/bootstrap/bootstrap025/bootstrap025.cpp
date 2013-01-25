@@ -8,13 +8,15 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
+#define G42CORE_TEST_FRAMEWORK_TUT
 #include "g42core/test/main.hpp"
+#undef G42CORE_TEST_FRAMEWORK_TUT
 #include "g42core/test/detail/cpputest_main.hpp"
 
 int faux_main()
 {
     int result = G42CORE_TEST_RUN_TESTS();
-    int cpputest_result = G42CORE_TEST_CPPUTEST_RUN_TESTS(reporter_with_ostream(std::cout), 0, 0);
+    int cpputest_result = G42CORE_TEST_CPPUTEST_RUN_TESTS(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout), 0, 0);
     return result | cpputest_result;
 }
 

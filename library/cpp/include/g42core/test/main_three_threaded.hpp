@@ -16,7 +16,9 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 G42CORE_MC_PRAGMA_ONCE
 
 #include <sstream>
-#include "main.hpp"
+#ifndef G42CORE_HG_A533B033358A43CB9FC53C9C607EC0AE
+#include "detail/reporter_outstream.hpp"
+#endif
 #include "detail/gtest_main.hpp"
 #include "detail/tut_main.hpp"
 #include "detail/cpputest_main.hpp"

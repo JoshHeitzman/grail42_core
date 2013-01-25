@@ -25,21 +25,22 @@ G42CORE_MC_PRAGMA_ONCE
 #include "detail/reporter_outstream.hpp"
 #endif
 
-typedef G42CORE_TEST_NS detail::reporter_outstream<
-    G42CORE_TEST_NS detail::reporter_outstream_policies<std::ostream> > reporter_with_ostream;
+#if defined(G42CORE_TEST_FRAMEWORK_CPPUTEST)
 
-G42CORE_MC_WARNING_PUSH
+#include "detail/cpputest_main.hpp"
 
-G42CORE_MC_MSVC_PRAGMA(warning(disable:4512)) // 'class' : assignment operator could not be generated
+#elif defined(G42CORE_TEST_FRAMEWORK_GTEST)
 
-#ifndef TUT_H_GUARD
-#include <tut/tut.hpp>
-#endif
+#include "detail/gtest_main.hpp"
 
-G42CORE_MC_WARNING_POP
+#elif defined(G42CORE_TEST_FRAMEWORK_TUT)
 
 #include "detail/tut_main.hpp"
 
-#define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_TUT_RUN_TESTS(reporter_with_ostream(std::cout), 0, nullptr)
+#define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_TUT_RUN_TESTS(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout), 0, nullptr)
+
+#else
+#error No default main currently.
+#endif
 
 #endif // G42CORE_HG_2F1EAE88DA374E4E817F118B850AB1D7

@@ -137,25 +137,25 @@ DEFINE_TEST()
 
     {
     std::stringstream ss;
-    executorA::run<>(reporter_with_ostream(ss));
+    executorA::run<>(G42CORE_TEST_NS detail::reporter_with_ostream(ss));
     std::string s = ss.str();
     VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 1 passed, 0 failed, 0 skipped ***\n"));
     }
     {
     std::stringstream ss;
-    executorB::run<>(reporter_with_ostream(ss));
+    executorB::run<>(G42CORE_TEST_NS detail::reporter_with_ostream(ss));
     std::string s = ss.str();
     VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 0 passed, 1 failed, 0 skipped ***\n"));
     }
     {
     std::stringstream ss;
-    executor::run<>(reporter_with_ostream(ss));
+    executor::run<>(G42CORE_TEST_NS detail::reporter_with_ostream(ss));
     std::string s = ss.str();
     VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 2 passed, 2 failed, 0 skipped ***\n"));
     }
     {
     std::stringstream ss;
-    executor2::run<>(reporter_with_ostream(ss));
+    executor2::run<>(G42CORE_TEST_NS detail::reporter_with_ostream(ss));
     std::string s = ss.str();
     VERIFY(s == std::string("*** Tests started  ***\n*** Tests complete: 1 passed, 2 failed, 0 skipped ***\n"));
     }

@@ -8,7 +8,8 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
-#include "g42core/test/main.hpp"
+#include "g42core/test/detail/reporter_outstream.hpp"
+
 #include "g42core/test/detail/gtest_main.hpp"
 #include "g42core/test/detail/tut_main.hpp"
 #include "g42core/test/detail/cpputest_main.hpp"

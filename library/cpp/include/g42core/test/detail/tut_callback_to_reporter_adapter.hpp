@@ -9,9 +9,18 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #ifndef G42CORE_HG_B23E23313A314046AAA5963A99D9CE74
 #define G42CORE_HG_B23E23313A314046AAA5963A99D9CE74
 
+#include <map>
+
+G42CORE_MC_WARNING_PUSH
+
+G42CORE_MC_MSVC_PRAGMA(warning(disable:4512)) // 'class' : assignment operator could not be generated
+
 #ifndef TUT_RUNNER_H_GUARD
 #include <tut/tut_runner.hpp>
 #endif
+
+G42CORE_MC_WARNING_POP
+
 
 G42CORE_MC_PRAGMA_ONCE
 
