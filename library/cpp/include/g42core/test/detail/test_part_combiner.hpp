@@ -39,7 +39,7 @@ struct test_parts_combiner
             }
             else
             {
-                id_to_list.insert(id_to_list_map::value_type(p->test_id(), id_to_list_map::mapped_type()));
+                id_to_list.insert(typename id_to_list_map::value_type(p->test_id(), typename id_to_list_map::mapped_type()));
                 id_to_list[p->test_id()].push_back(p);
             }
         }
