@@ -41,11 +41,14 @@ echo   * The grail42_core_cmd environment variable is required to be set by
 echo     running set_env_core.cmd.
 echo.
 echo If grail42_android_faux_console_run_app_timeout is set then that number
-echo of seconds will be waited  before giving up on the app to complete
+echo of seconds will be waited before giving up on the app to complete
 echo execution.  Defaults to 10.
 echo.
 echo If the grail42_cmd_verbose_logging environment variable is set then 
 echo additional diagnostic output will be emitted.
+echo.
+echo If grail42_android_faux_console_run_app_start_timeout is set then that
+echo of second will be waited before giving up on the app to start execution.
 echo.
 echo For example:
 echo.
@@ -57,6 +60,7 @@ goto :EOF
 :ArgsValidated
 
 if not defined grail42_android_faux_console_run_app_timeout set grail42_android_faux_console_run_app_timeout=10
+if not defined grail42_android_faux_console_run_app_start_timeout set grail42_android_faux_console_run_app_start_timeout=4
 
 rem Clear the current log state
 "%android_sdk_root%\platform-tools\adb.exe" logcat -c
@@ -81,7 +85,7 @@ rem These identifiers are emitted by the FauxConsoleActivity included in the tem
 rem It is possible for the app to start and not emit these identifier due to a preceding error.
 "%android_sdk_root%\platform-tools\adb.exe" logcat -d -v raw 13380324612F4E3184624E7AD706141A:I *:S | findstr "4D85BA47C2364027A09FBF016A5C2C2A" > nul
 if not ERRORLEVEL 1 goto RemoteAppExecutionStarted
-if /i %iterations% GEQ 4 (
+if /i %iterations% GEQ %grail42_android_faux_console_run_app_start_timeout% (
 	echo.
     echo ERROR - app execution start was not detected after %iterations% attempts.  Dumping log data.
 	echo.
@@ -115,7 +119,9 @@ goto WaitForRemoteAppExecutionToComplete
 if defined grail42_cmd_verbose_logging echo RemoteAppExecutionComplete
 
 rem Scan through the log lines and only emit the lines between the start and end markers.
+rem TODO use a more robust python implementation when possible.
 set enable_stdout_echo=
 set remote_exit_code=0
 for /f "delims=" %%i in ('"%android_sdk_root%\platform-tools\adb.exe" logcat -d -v raw 13380324612F4E3184624E7AD706141A:I stderr:I stdout:I *:S') do (call "%grail42_core_cmd%\if_equ_set.cmd" %%i ECD3B7A023654F9D99F2EF3D4AA33925 enable_stdout_echo) && (if "!enable_stdout_echo!"=="1" echo %%i) && (call "%grail42_core_cmd%\if_equ_set.cmd" %%i 4D85BA47C2364027A09FBF016A5C2C2A enable_stdout_echo 1) && (for /f "tokens=1,2 delims=:" %%r in ("%%i") do call "%grail42_core_cmd%\if_equ_set.cmd" %%r DAB25FDC5A974392AA39ED7928A31561 remote_exit_code %%s)
+if defined grail42_cmd_verbose_logging echo remote_exit_code=%remote_exit_code%
 endlocal & CMD /C EXIT %remote_exit_code%
