@@ -39,12 +39,27 @@
     <ClInclude Include="stdafx.h">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_executor_single_thread.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\registry_mock.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_execution.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_combiner.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap065.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basictests_test_part_combiner.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
   </ItemGroup>

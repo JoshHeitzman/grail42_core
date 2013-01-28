@@ -433,6 +433,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_registry.hpp" />
+    <ClInclude Include="..\registry_mock.hpp" />
     <ClInclude Include="mock_registry.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

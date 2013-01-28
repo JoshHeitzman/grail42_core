@@ -45,6 +45,9 @@
     <ClInclude Include="mock_registry.hpp">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\registry_mock.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap055.cpp">
