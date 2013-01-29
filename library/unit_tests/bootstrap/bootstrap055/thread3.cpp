@@ -19,6 +19,10 @@ BEGIN_TESTS()
 DEFINE_TEST()
 {
     test_func();
+#if 0
+    printf("thread3 done\n");
+    fflush(stdout);
+#endif
 }
 
 END_TESTS()

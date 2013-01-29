@@ -46,6 +46,8 @@ inline int faux_main_wrapper()
     // prior to shutdown.  On Android the stdout buffer between the JVM and native code doesn't appear to be shared 
     // as flushing from the activity has no apparent effect.
     fflush(stdout);
+    sleep(1); // Even with the first flush it's still inconsistent
+    fflush(stdout);
 
     return result;
 }

@@ -81,8 +81,10 @@ DEFINE_TEST()
 {
     {
     G42CORE_CONCURRENCY_NS atomic<bool> atom(true);
+#if !defined(HWC_PLATFORM_ANDROID)
     bool atom_is_lock_free = atom.is_lock_free();
     VERIFY(atom_is_lock_free);
+#endif
     VERIFY(atom.load());
     atom.store(false);
     VERIFY(!atom.load());

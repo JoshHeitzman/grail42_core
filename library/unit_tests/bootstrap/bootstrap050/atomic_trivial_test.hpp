@@ -8,8 +8,8 @@ public:
     {}
     void ExecuteOnEachThread()
     {
-        // This is a "doesn't crash" test rather than a correctness test and not a great one at 
-        // that
+        // This is a "doesn't crash" / "doesn't hang" test rather than a correctness test 
+        // and not a great one at that
         for(unsigned int i = 0; i < 10000; ++i)
         {
             atom.store(!atom.load());
