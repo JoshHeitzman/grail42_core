@@ -68,7 +68,7 @@
     <ClCompile Include="basictests_tests_executor.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="basic_tests_test_executor.cpp">
+    <ClCompile Include="basictests_test_executor.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
   </ItemGroup>

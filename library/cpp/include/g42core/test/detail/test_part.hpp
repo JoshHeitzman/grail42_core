@@ -76,23 +76,27 @@ public:
         // the thread main or its equivalent is executing on
         static const int primary = boost::integer_traits<int>::const_max;
         // any thread other than the primary
-        static const int nonprimary = boost::integer_traits<int>::const_max-1;
+        static const int nonprimary = primary-1;
         // any thread
-        static const int any = boost::integer_traits<int>::const_max-1;
+        static const int any = nonprimary-2;
     };
     struct special_process_ids
     {
         // the first process that causes other processes to start directly or indirectly; aka master process; aka oldest process
         static const int primary = boost::integer_traits<int>::const_max;
         // any process other than the primary; might not actually be a subprocess (i.e. could be started by something other than the primary process)
-        static const int nonprimary = boost::integer_traits<int>::const_max-1;
+        static const int nonprimary = primary-1;
         // any process
-        static const int any = boost::integer_traits<int>::const_max-1;
+        static const int any = nonprimary-1;
     };
     logical_process_and_thread_holder(int threadId = special_thread_ids::any, int processId = special_process_ids::primary):
         processId(processId),
         threadId(threadId)
     {}
+    int thread_id() const
+    {
+        return threadId;
+    }
 private:
     const int processId;
     const int threadId;

@@ -19,6 +19,16 @@ BEGIN_TESTS()
 
 DEFINE_TEST()
 {
+    std::list<test_part_mock_with_id*> test_part_sequence1;
+    test_part_mock_with_id testPart1("test_part_1");
+    unsigned int passed = 0;
+    unsigned int failed = 0;
+    {
+    std::stringstream ss;
+    G42CORE_TEST_NS detail::test_executor::execute(G42CORE_TEST_NS detail::reporter_with_ostream(ss), test_part_sequence1, passed, failed);
+    std::string s = ss.str();
+    VERIFY(s == std::string());
+    }
 }
 
 END_TESTS()

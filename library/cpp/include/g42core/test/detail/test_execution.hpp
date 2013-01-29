@@ -44,22 +44,59 @@ struct test_sieve_noop
 struct test_executor
 {
     template <class Reporter, class TestPartSequence>
-    static void execute(Reporter&& reporter, const TestPartSequence& test_part_sequence, unsigned int &passed, unsigned int &failed)
+    static void execute(Reporter&& reporter, TestPartSequence& test_part_sequence, unsigned int &passed, unsigned int &failed)
     {
-#if 0
-        typedef decltype(*(*test_part_sequence).begin()) test_part_type;
+        (void)reporter;
+        (void)passed;
+        (void)failed;
+        typedef typename std::remove_reference< decltype(*(test_part_sequence.begin())) >::type test_part_type;
         std::list<test_part_type> ordered_parts;
         std::list<test_part_type> nonprimary_parts;
         std::list<test_part_type> anythread_parts;
-        test_part_type primary = (test_part_type)0;
-        for(auto test_part = (*test_part_sequence).begin(); 
-            test_part != (*test_part_sequence).end(); 
+        typename std::remove_const<test_part_type>::type primary = (test_part_type)0;
+        for(auto test_part = test_part_sequence.begin(); 
+            test_part != test_part_sequence.end(); 
             ++test_part)
         {
-            if
-
+            auto logicalTID = (*test_part)->logical_process_and_thread().thread_id();
+            if(logicalTID == logical_process_and_thread_holder::special_thread_ids::primary)
+            {
+                primary = (*test_part);
+            }
+            else if(logicalTID == logical_process_and_thread_holder::special_thread_ids::nonprimary)
+            {
+                nonprimary_parts.push_back(*test_part);
+            }
+            else if(logicalTID == logical_process_and_thread_holder::special_thread_ids::any)
+            {
+                anythread_parts.push_back(*test_part);
+            }
+            else
+            {
+                ordered_parts.push_back(*test_part);
+            }
         }
-#endif
+        if(ordered_parts.size() > 0)
+        {
+            ordered_parts.sort(test_executor::compare_parts<typename std::list<test_part_type>::value_type>);
+        }
+
+        (void)primary;
+
+        /* TODO
+        1 Create the number of threads necessary to run the parts to be run on other
+            threads.
+        2 Execute the part to be run on the primary thread, if any, catching any infrastructure 
+            exceptions.
+        3 join all of the nonprimary threads
+        4 Check the stringstream for each thread and output if it has contents
+        */
+    }
+private:
+    template <class TestPart>
+    static bool compare_parts(TestPart test_part_lhs, TestPart test_part_rhs)
+    {
+        return test_part_lhs->logical_process_and_thread().thread_id() < test_part_rhs->logical_process_and_thread().thread_id();
     }
 };
 
@@ -105,16 +142,6 @@ Filter out:
     * tests that have a part that must be run in a nonprimary process
     * tests that have multiple parts that must be run on a primary thread
 Accmulate count of number of filtered out tests.
-*/
-
-/*
-while tests remain:
-    1 Create the number of threads necessary to run the parts to be run on nonprimary
-        threads.
-    2 Execute the part to be run on the primary thread, catching any infrastructure 
-        exceptions.
-    3 join all of the nonprimary threads
-    4 Check the stringstream for each thread and output if it has contents
 */
 
 template <class Policy>

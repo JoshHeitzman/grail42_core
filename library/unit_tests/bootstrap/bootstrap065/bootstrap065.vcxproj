@@ -426,7 +426,7 @@
   <ItemGroup>
     <ClCompile Include="basictests_tests_executor.cpp" />
     <ClCompile Include="basictests_test_part_combiner.cpp" />
-    <ClCompile Include="basic_tests_test_executor.cpp" />
+    <ClCompile Include="basictests_test_executor.cpp" />
     <ClCompile Include="bootstrap065.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
