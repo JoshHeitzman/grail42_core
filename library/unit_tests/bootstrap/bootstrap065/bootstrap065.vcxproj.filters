@@ -51,6 +51,9 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_combiner.hpp">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test_part_mock.hpp">
+      <Filter>C/C++ Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bootstrap065.cpp">
@@ -60,6 +63,12 @@
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
     <ClCompile Include="basictests_test_part_combiner.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basictests_tests_executor.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="basic_tests_test_executor.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
   </ItemGroup>

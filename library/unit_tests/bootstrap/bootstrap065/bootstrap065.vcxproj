@@ -421,9 +421,12 @@
     <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_combiner.hpp" />
     <ClInclude Include="..\registry_mock.hpp" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="test_part_mock.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="basictests_tests_executor.cpp" />
     <ClCompile Include="basictests_test_part_combiner.cpp" />
+    <ClCompile Include="basic_tests_test_executor.cpp" />
     <ClCompile Include="bootstrap065.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

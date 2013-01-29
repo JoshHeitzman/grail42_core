@@ -25,8 +25,8 @@ namespace detail {
 
 struct test_validator_noop
 {
-    template <typename Tests>
-    bool validate(const Tests&)
+    template <class TestPartSequences>
+    bool validate(const TestPartSequences&)
     {
         return true;
     }
@@ -38,6 +38,53 @@ struct test_sieve_noop
     unsigned int filter(TestPartSequences&)
     {
         return 0;
+    }
+};
+
+struct test_executor
+{
+    template <class Reporter, class TestPartSequence>
+    static void execute(Reporter&& reporter, const TestPartSequence& test_part_sequence, unsigned int &passed, unsigned int &failed)
+    {
+#if 0
+        typedef decltype(*(*test_part_sequence).begin()) test_part_type;
+        std::list<test_part_type> ordered_parts;
+        std::list<test_part_type> nonprimary_parts;
+        std::list<test_part_type> anythread_parts;
+        test_part_type primary = (test_part_type)0;
+        for(auto test_part = (*test_part_sequence).begin(); 
+            test_part != (*test_part_sequence).end(); 
+            ++test_part)
+        {
+            if
+
+        }
+#endif
+    }
+};
+
+template <class TestExecutor>
+struct tests_executor
+{
+    typedef TestExecutor test_executor;
+    template <class Reporter, class TestPartSequences>
+    static int execute(Reporter&& reporter, const TestPartSequences& test_part_sequences, unsigned int ignored)
+    {
+        reporter.on_tests_starting();
+
+        unsigned int passed = 0;
+        unsigned int failed = 0;
+
+        for(auto test_part_sequence = test_part_sequences.begin(); 
+            test_part_sequence != test_part_sequences.end(); 
+            ++test_part_sequence)
+        {
+            test_executor::execute(reporter, *test_part_sequence, passed, failed);
+        }
+
+        reporter.on_tests_complete(passed, failed, ignored);
+
+        return failed ? 1 : 0;
     }
 };
 
