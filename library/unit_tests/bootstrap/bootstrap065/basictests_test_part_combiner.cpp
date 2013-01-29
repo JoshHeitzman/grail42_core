@@ -65,8 +65,9 @@ BEGIN_TESTS()
 
 DEFINE_TEST()
 {
+    const char* two = "2";
     typedef mock_registrar<const G42CORE_TEST_NS detail::test_part_base_common*> registrar;
-    test1 t1("2");
+    test1 t1(two);
     registrar::add(&t1);
     {
     auto test_part_sequences(G42CORE_TEST_NS detail::test_parts_combiner::combine(registrar::range()));
@@ -85,14 +86,15 @@ DEFINE_TEST()
         VERIFY(std::string((*i).first) == std::string((*((*i).second.begin()))->test_id()));
     }
     }
-    test1 t3("2");
+    test1 t3(two);
     registrar::add(&t3);
     verify_test_part_sequences<registrar>(2);
-    test1 t3a("3");
+    const char* three = "3";
+    test1 t3a(three);
     registrar::add(&t3a);
-    test1 t3b("3");
+    test1 t3b(three);
     registrar::add(&t3b);
-    test1 t3c("3");
+    test1 t3c(three);
     registrar::add(&t3c);
     verify_test_part_sequences<registrar>(3);
 }
