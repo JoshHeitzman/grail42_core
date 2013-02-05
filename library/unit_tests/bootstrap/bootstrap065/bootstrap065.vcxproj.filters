@@ -68,7 +68,10 @@
     <ClCompile Include="basictests_tests_executor.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="basictests_test_executor.cpp">
+    <ClCompile Include="basictests_test_part_executor.cpp">
+      <Filter>C/C++ Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_executor_multiple_threads.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
   </ItemGroup>
