@@ -46,7 +46,6 @@ G42CORE_MC_PRAGMA_ONCE
 #else
 
 #include "detail/test_part_common.hpp"
-#include "detail/test_executor_single_thread.hpp"
 
 #define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<G42CORE_TEST_DEFAULT_TEST_REGISTRY>::run(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout))
 

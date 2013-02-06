@@ -8,11 +8,12 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 
 #include "stdafx.h"
 
-#include <g42core/test/main.hpp>
+#include "g42core/test/main.hpp"
+#include "g42core/test/detail/test_executor_single_thread.hpp"
 
 int faux_main()
 {
-    return G42CORE_TEST_RUN_TESTS();
+    return G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<G42CORE_TEST_DEFAULT_TEST_REGISTRY>::run(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout));
 }
 
 // 1 means that the nexe will be run from the commandline in sel_ldr (e.g. using %grail42_core_cmd%\nacl\faux_console\run_nexe_standalone.cmd)
