@@ -31,7 +31,7 @@ namespace detail {
 struct test_validator_noop
 {
     template <class TestPartSequences>
-    bool validate(const TestPartSequences&)
+    static bool validate(const TestPartSequences&)
     {
         return true;
     }
@@ -40,7 +40,7 @@ struct test_validator_noop
 struct test_sieve_noop
 {
     template <typename TestPartSequences>
-    unsigned int filter(TestPartSequences&)
+    static unsigned int filter(TestPartSequences&)
     {
         return 0;
     }
@@ -84,16 +84,24 @@ private:
     const TestPart& test_part;
 };
 
+/*
+TODO test_sieve_multiple_threads
+Filter out:
+    * tests that have a part that must be run in a nonprimary process
+    * tests that have multiple parts that must be run on a primary thread
+Accumulate count of number of filtered out tests.
+*/
+
 struct test_executor_multiple_threads
 {
     template <class Reporter, class TestPartSequence>
     static void execute(Reporter&& reporter, TestPartSequence& test_part_sequence, unsigned int &passed, unsigned int &failed)
     {
-        typedef typename std::remove_reference< decltype(*(test_part_sequence.begin())) >::type test_part_type;
-        std::list<test_part_type> ordered_parts;
+        typedef typename std::remove_const<typename std::remove_reference< decltype(*(test_part_sequence.begin())) >::type>::type test_part_type;
+        std::list<test_part_type > ordered_parts;
         std::list<test_part_type> nonprimary_parts;
         std::list<test_part_type> anythread_parts;
-        typename std::remove_const<test_part_type>::type primary = (test_part_type)0;
+        test_part_type primary = (test_part_type)0;
         for(auto test_part = test_part_sequence.begin(); 
             test_part != test_part_sequence.end(); 
             ++test_part)
@@ -226,7 +234,7 @@ struct tests_executor
             // The reason for passing in passed and failed by reference is to allow them to be incremented
             // more than once by an executor that runs the test more than once.  For example the executor
             // runs the order agnostic parts started in different orders.
-            test_executor::execute(reporter, *test_part_sequence, passed, failed);
+            test_executor::execute(reporter, (*test_part_sequence).second, passed, failed);
         }
 
         reporter.on_tests_complete(passed, failed, ignored);
@@ -245,15 +253,6 @@ struct test_execution_policy
     typedef Sieve sieve;
 };
 
-// TODO
-
-/*
-Filter out:
-    * tests that have a part that must be run in a nonprimary process
-    * tests that have multiple parts that must be run on a primary thread
-Accmulate count of number of filtered out tests.
-*/
-
 template <class Policy>
 struct test_execution
 {
@@ -264,7 +263,7 @@ struct test_execution
     typedef typename Policy::sieve sieve;
 
     template <class Reporter>
-    static int run(Reporter& reporter)
+    static int run(Reporter&& reporter)
     {
         auto test_part_sequences(combiner::combine(registry::range()));
 

@@ -46,8 +46,18 @@ G42CORE_MC_PRAGMA_ONCE
 #else
 
 #include "detail/test_part_common.hpp"
+#include "detail/verification_failure.hpp"
+#include "detail/test_part_combiner.hpp"
+#include "detail/test_execution.hpp"
 
-#define G42CORE_TEST_RUN_TESTS() G42CORE_TEST_NS detail::test_executor_single_thread_without_test_part_validation<G42CORE_TEST_DEFAULT_TEST_REGISTRY>::run(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout))
+#define G42CORE_TEST_RUN_TESTS() \
+G42CORE_TEST_NS detail::test_execution< \
+    G42CORE_TEST_NS detail::test_execution_policy< \
+        G42CORE_TEST_DEFAULT_TEST_REGISTRY, \
+        G42CORE_TEST_NS detail::test_parts_combiner, \
+        G42CORE_TEST_NS detail::tests_executor<G42CORE_TEST_NS detail::test_executor_multiple_threads> \
+    > \
+>::run(G42CORE_TEST_NS detail::reporter_with_ostream(std::cout))
 
 #endif
 

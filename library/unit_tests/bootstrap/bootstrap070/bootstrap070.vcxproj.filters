@@ -2,18 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="C/C++ Source Files">
-      <UniqueIdentifier>{19B04471-5F6C-42E6-95AC-7FF06CE0319B}</UniqueIdentifier>
+      <UniqueIdentifier>{69C56449-3309-44F5-9C10-6E213B3203FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx</Extensions>
     </Filter>
     <Filter Include="C/C++ Header Files">
-      <UniqueIdentifier>{3B2D0C46-B576-4A0D-A251-8BE58E7CAD9B}</UniqueIdentifier>
+      <UniqueIdentifier>{A86AC472-6ADA-4E2E-8F85-15B1D59A2E2E}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="Android Package Files">
-      <UniqueIdentifier>{5C75A96D-E6A3-4FA4-9FFB-ACF725DB5448}</UniqueIdentifier>
+      <UniqueIdentifier>{FF0A11DF-E09D-4E23-A49E-DCAC67CD6998}</UniqueIdentifier>
     </Filter>
     <Filter Include="Java Source Files">
-      <UniqueIdentifier>{5AD3A254-6E65-4413-9516-B431A8FA5735}</UniqueIdentifier>
+      <UniqueIdentifier>{245DD547-0382-476E-AC13-64DB15D14F18}</UniqueIdentifier>
       <Extensions>java;class</Extensions>
     </Filter>
   </ItemGroup>
@@ -21,7 +21,7 @@
     <None Include="android_package\AndroidManifest.xml">
       <Filter>Android Package Files</Filter>
     </None>
-    <None Include="android_package\src\grail42\core\bootstrap060\FauxConsole.java">
+    <None Include="android_package\src\grail42\core\bootstrap070\FauxConsole.java">
       <Filter>Java Source Files</Filter>
     </None>
     <None Include="android_package\build.xml">
@@ -39,27 +39,9 @@
     <ClInclude Include="stdafx.h">
       <Filter>C/C++ Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\main.hpp">
-      <Filter>C/C++ Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\test.hpp">
-      <Filter>C/C++ Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_common.hpp">
-      <Filter>C/C++ Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\if_not_report.hpp">
-      <Filter>C/C++ Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_executor_single_thread.hpp">
-      <Filter>C/C++ Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\reporter_outstream.hpp">
-      <Filter>C/C++ Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bootstrap060.cpp">
+    <ClCompile Include="bootstrap070.cpp">
       <Filter>C/C++ Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">

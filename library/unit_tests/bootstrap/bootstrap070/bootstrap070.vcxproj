@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ADE95957-30E1-4BFB-8A97-8E54D79240DF}</ProjectGuid>
+    <ProjectGuid>{10E2B102-9558-4AF8-8A7A-67F6740E2280}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -205,7 +205,7 @@
     </ClCompile>
     <PostBuildEvent>
       <Message>Executing unit test</Message>
-      <Command>if defined grail42_core_cmd (if defined GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID (%grail42_core_cmd%\android\faux_console\run_app.cmd grail42.core.bootstrap060 .FauxConsole) else (echo skipping test execution as GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID is not defined)) else (echo Skipping test execution as grail42_core_cmd is not defined)</Command>
+      <Command>if defined grail42_core_cmd (if defined GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID (%grail42_core_cmd%\android\faux_console\run_app.cmd grail42.core.bootstrap070 .FauxConsole) else (echo skipping test execution as GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID is not defined)) else (echo Skipping test execution as grail42_core_cmd is not defined)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl32'">
@@ -309,7 +309,7 @@
     </ClCompile>
     <PostBuildEvent>
       <Message>Executing unit test</Message>
-      <Command>if defined grail42_core_cmd (if defined GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID (%grail42_core_cmd%\android\faux_console\run_app.cmd grail42.core.bootstrap060 .FauxConsole) else (echo skipping test execution as GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID is not defined)) else (echo Skipping test execution as grail42_core_cmd is not defined)</Command>
+      <Command>if defined grail42_core_cmd (if defined GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID (%grail42_core_cmd%\android\faux_console\run_app.cmd grail42.core.bootstrap070 .FauxConsole) else (echo skipping test execution as GRAIL42_TEST_POST_BUILD_EXECUTION_ENABLE_ANDROID is not defined)) else (echo Skipping test execution as grail42_core_cmd is not defined)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|NaCl32'">
@@ -412,22 +412,16 @@
     <None Include="android_package\build.xml" />
     <None Include="android_package\project.properties" />
     <None Include="android_package\res\values\strings.xml" />
-    <None Include="android_package\src\grail42\core\bootstrap060\FauxConsole.java" />
+    <None Include="android_package\src\grail42\core\bootstrap070\FauxConsole.java" />
     <None Include="index.html" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\if_not_report.hpp" />
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\reporter_outstream.hpp" />
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_executor_single_thread.hpp" />
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\detail\test_part_common.hpp" />
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\main.hpp" />
-    <ClInclude Include="..\..\..\cpp\include\g42core\test\test.hpp" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\trivialtests_detail_public_ut_required_api1.cpp" />
     <ClCompile Include="..\trivialtests_detail_public_ut_required_api2.cpp" />
-    <ClCompile Include="bootstrap060.cpp" />
+    <ClCompile Include="bootstrap070.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

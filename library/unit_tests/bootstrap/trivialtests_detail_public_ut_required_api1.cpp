@@ -11,5 +11,5 @@ See accompanying file LICENSE_1_0.txt or online copies at:
 #include "g42core/test/test.hpp"
 
 // Shouldn't get any link error when compiling the same tests again in a different translation unit
-#include "../trivialtests_public_ut_required_api.cpp"
+#include "trivialtests_public_ut_required_api.cpp"
 

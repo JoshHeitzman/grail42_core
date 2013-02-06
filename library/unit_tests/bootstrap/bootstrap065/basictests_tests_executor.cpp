@@ -58,7 +58,7 @@ BEGIN_TESTS()
 
 DEFINE_TEST()
 {
-    std::list<std::list<test_part_mock_with_id*> > test_part_sequences;
+    std::list<std::pair<int, std::list<test_part_mock_with_id*> > > test_part_sequences;
     {
     std::stringstream ss;
     G42CORE_TEST_NS detail::tests_executor<test_executor_mock_pass_or_fail<> >::execute(G42CORE_TEST_NS detail::reporter_with_ostream(ss), test_part_sequences, 0);
@@ -68,7 +68,7 @@ DEFINE_TEST()
     std::list<test_part_mock_with_id*> test_part_sequence1;
     test_part_mock_with_id testPart1("test_part_1");
     test_part_sequence1.push_back(&testPart1);
-    test_part_sequences.push_back(test_part_sequence1);
+    test_part_sequences.push_back(std::make_pair(0, test_part_sequence1));
     {
     std::stringstream ss;
     G42CORE_TEST_NS detail::tests_executor<test_executor_mock_pass_or_fail<true> >::execute(G42CORE_TEST_NS detail::reporter_with_ostream(ss), test_part_sequences, 0);
@@ -84,7 +84,7 @@ DEFINE_TEST()
     std::list<test_part_mock_with_id*> test_part_sequence2;
     test_part_mock_with_id testPart2("test_part_2");
     test_part_sequence2.push_back(&testPart2);
-    test_part_sequences.push_back(test_part_sequence2);
+    test_part_sequences.push_back(std::make_pair(0, test_part_sequence2));
     {
     std::stringstream ss;
     G42CORE_TEST_NS detail::tests_executor<test_executor_mock_pass_or_fail<true> >::execute(G42CORE_TEST_NS detail::reporter_with_ostream(ss), test_part_sequences, 1);
@@ -100,7 +100,7 @@ DEFINE_TEST()
     std::list<test_part_mock_with_id*> test_part_sequence3;
     test_part_mock_with_id testPart3("test_part_3");
     test_part_sequence3.push_back(&testPart3);
-    test_part_sequences.push_back(test_part_sequence3);
+    test_part_sequences.push_back(std::make_pair(0, test_part_sequence3));
     {
     std::stringstream ss;
     G42CORE_TEST_NS detail::tests_executor<test_executor_mock_alternate>::execute(G42CORE_TEST_NS detail::reporter_with_ostream(ss), test_part_sequences, 10);
