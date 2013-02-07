@@ -15,4 +15,5 @@ The following tests do not require TUT, gtest, or CppUTest.
 
   bootstrap060 - unit tests for grail42's own implementation common API utilizing test_executor_single_thread_without_test_part_validation.
   bootstrap065 - unit tests for test_part_combiner, test_part_executor, tests_executor, test_executor_multiple_threads, and test_execution.
-  bootstrap070 - unit tests for grail42's own implementation common API utilizing test_execution rather than test_executor_single_thread_without_test_part_validation.
+  bootstrap070 - integration test for grail42's own implementation common API utilizing test_execution rather than test_executor_single_thread_without_test_part_validation.
+  bootstrap075 - integration test for basic multi-threaded tests.

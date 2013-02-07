@@ -24,13 +24,13 @@ G42CORE_MC_PRAGMA_ONCE
 
 #define G42CORE_TEST_DETAIL_END_GROUP() }
 
-#define G42CORE_TEST_DETAIL_DEFINE_TEST_PART_FOR_THREAD(ThreadId) \
+#define G42CORE_TEST_DETAIL_DEFINE_TEST_PART_FOR_THREAD(Name, ThreadId) \
 class BOOST_PP_CAT(test_, __LINE__) : public G42CORE_TEST_NS detail::test_part_base_with_policy<G42CORE_TEST_DEFAULT_TEST_PART_POLICY> \
 { \
 public: \
     BOOST_PP_CAT(test_, __LINE__)(): \
         G42CORE_TEST_NS detail::test_part_base_with_policy<G42CORE_TEST_DEFAULT_TEST_PART_POLICY>( \
-            typeid(BOOST_PP_CAT(test_, __LINE__)).name(), \
+            Name, \
             G42CORE_TEST_NS detail::logical_process_and_thread_holder(ThreadId), \
             G42CORE_TEST_NS detail::basic_source_code_info_holder(__FILE__, __LINE__)) \
     {} \
@@ -38,7 +38,7 @@ public: \
 } BOOST_PP_CAT(instance_, __LINE__); \
 void BOOST_PP_CAT(test_, __LINE__)::run() const
 
-#define G42CORE_TEST_DETAIL_DEFINE_TEST() G42CORE_TEST_DETAIL_DEFINE_TEST_PART_FOR_THREAD(G42CORE_TEST_NS detail::logical_process_and_thread_holder::special_thread_ids::primary)
-#define G42CORE_TEST_DETAIL_DEFINE_TEST_PART_MULTITHREADED() G42CORE_TEST_DETAIL_DEFINE_TEST_PART_FOR_THREAD(G42CORE_TEST_NS detail::logical_process_and_thread_holder::special_thread_ids::any)
+#define G42CORE_TEST_DETAIL_DEFINE_TEST() G42CORE_TEST_DETAIL_DEFINE_TEST_PART_FOR_THREAD(typeid(BOOST_PP_CAT(test_, __LINE__)).name(), G42CORE_TEST_NS detail::logical_process_and_thread_holder::special_thread_ids::primary)
+#define G42CORE_TEST_DETAIL_DEFINE_TEST_PART_MULTITHREADED(Name) G42CORE_TEST_DETAIL_DEFINE_TEST_PART_FOR_THREAD(Name, G42CORE_TEST_NS detail::logical_process_and_thread_holder::special_thread_ids::any)
 
 #endif // G42CORE_HG_7BC3322891C04BA2BF239B77475FA2AE
