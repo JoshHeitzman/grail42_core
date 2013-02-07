@@ -2,14 +2,20 @@ Grail42 Core is a subproject of the Grail42 project located at:
 
 https://github.com/JoshHeitzman/grail42
 
-This project provides a header file only C++ library that normalizes the usage interface
-and output of the Template Unit Test Framework (TUT), Google Test (gtest), and CppUTest.
+The project includes a header file only C++ library that provides:
+* a C++ unit testing framework that is thread aware and thread safe
+* adapters that normalize the usage interface and output of
+   * the Template Unit Test Framework (TUT)
+   * Google Test (gtest)
+   * CppUTest
+* a tiny concurrency library that primarily normalizes use of std or boost as needed
+
 The headers have been built for and on Windows 7, Android 2.2 and Chrome Native Client 23.  
 Builds were done using VC++ 2010 with the add-ins for the Android NDK and Chrome Native 
 Client SDK (both of these use gcc rather than msvc), so the library is known to be 
 cross-platform/multi-platform.
 
-Additionally it includes a few tools that simplify faux console applications on Android 
+Additionally included are a few tools that simplify faux console applications on Android 
 and Google Native Client.  The example Visual Studio 2010 projects, which these tools 
 have been tested with, are located in the sibling project Grail42 Templates (see the 
 Grail42 project referenced above).
