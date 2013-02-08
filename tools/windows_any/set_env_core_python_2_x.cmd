@@ -39,6 +39,6 @@ goto :EOF
 :ArgsValidated
 endlocal
 
-set grail_python2_x_exe=%1
+set grail42_python2_x_exe=%1
 if defined PYTHONPATH (set PYTHONPATH=%PYTHONPATH%;%grail42_core_root%\library\python_2_x) else (set PYTHONPATH=%grail42_core_root%\library\python_2_x)
 
