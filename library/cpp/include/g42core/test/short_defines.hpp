@@ -18,6 +18,7 @@ G42CORE_MC_PRAGMA_ONCE
 #define BEGIN_TESTS G42CORE_TEST_BEGIN_GROUP
 #define END_TESTS G42CORE_TEST_END_GROUP
 #define DEFINE_TEST G42CORE_TEST_DEFINE_TEST
+#define DEFINE_TEST_PART_MT G42CORE_TEST_DEFINE_TEST_PART_MULTITHREADED
 
 /*
 VERIFY is used for the default as it is shorter than endorse.  Both verify and endorse are synonyms of certify and confirm.
